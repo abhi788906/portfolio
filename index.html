@@ -3,11 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Abhishek Gupta - Senior DevOps & Security Engineer with expertise in AWS, Kubernetes, CI/CD, and cloud infrastructure">
+    <meta name="keywords" content="DevOps, AWS, Kubernetes, CI/CD, Terraform, Security Engineer">
+    <meta name="author" content="Abhishek Gupta">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://your-domain.com">
     <title>Abhishek Gupta - DevOps Engineer</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" media="print" onload="this.media='all'">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500;600&display=swap');
         
         :root {
             --primary-red: #dc2626;
@@ -78,8 +85,32 @@
         }
 
         .card-hover:hover {
-            transform: translateY(-5px);
+            transform: translateY(-5px) rotateY(5deg);
             box-shadow: 0 20px 25px -5px rgba(220, 38, 38, 0.1), 0 10px 10px -5px rgba(220, 38, 38, 0.04);
+        }
+
+        /* Project Card Specific Hover */
+        .project-card {
+            transition: all 0.4s ease;
+            transform-style: preserve-3d;
+            perspective: 1000px;
+        }
+
+        .project-card:hover {
+            transform: rotateY(8deg) translateY(-8px);
+            box-shadow: 0 25px 35px -5px rgba(220, 38, 38, 0.15), 0 15px 15px -5px rgba(220, 38, 38, 0.08);
+        }
+
+        .project-card button {
+            transition: all 0.3s ease;
+            padding: 8px 16px;
+            border-radius: 8px;
+        }
+
+        .project-card:hover button {
+            background-color: #dc2626;
+            color: white !important;
+            transform: scale(1.05);
         }
 
         /* Progress Bar Animation */
@@ -209,7 +240,7 @@
                 <div class="w-32 h-32 mx-auto mb-6 relative">
                     <div class="w-full h-full rounded-full bg-gradient-to-r from-red-500 to-red-600 p-1">
                         <div class="w-full h-full rounded-full bg-white flex items-center justify-center overflow-hidden">
-                            <img src="PXL_20221201_174040178.jpg" alt="Abhishek Gupta - DevOps Engineer" class="w-28 h-28 rounded-full object-cover">
+                            <img src="PXL_20221201_174040178.jpg" alt="Abhishek Gupta - DevOps Engineer" class="w-28 h-28 rounded-full object-cover" loading="eager" fetchpriority="high">
                         </div>
                     </div>
                     <div class="absolute -bottom-1 -right-1 w-8 h-8 bg-green-500 rounded-full flex items-center justify-center">
@@ -361,21 +392,13 @@
                         <div>
                             <div class="flex justify-between mb-2">
                                 <span class="text-gray-700">Azure</span>
-                                <span class="text-red-600 font-semibold">80%</span>
+                                <span class="text-red-600 font-semibold">40%</span>
                             </div>
                             <div class="w-full bg-gray-200 rounded-full h-2">
-                                <div class="progress-bar h-2 rounded-full" style="width: 80%"></div>
+                                <div class="progress-bar h-2 rounded-full" style="width: 40%"></div>
                             </div>
                         </div>
-                        <div>
-                            <div class="flex justify-between mb-2">
-                                <span class="text-gray-700">GCP</span>
-                                <span class="text-red-600 font-semibold">75%</span>
-                            </div>
-                            <div class="w-full bg-gray-200 rounded-full h-2">
-                                <div class="progress-bar h-2 rounded-full" style="width: 75%"></div>
-                            </div>
-                        </div>
+
                     </div>
                 </div>
 
@@ -385,7 +408,7 @@
                         <div class="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mr-4">
                             <i class="fab fa-docker text-red-600 text-xl"></i>
                         </div>
-                        <h3 class="text-xl font-semibold text-gray-900">Containers</h3>
+                        <h3 class="text-xl font-semibold text-gray-900">Containers & K8s</h3>
                     </div>
                     <div class="space-y-4">
                         <div>
@@ -399,16 +422,16 @@
                         </div>
                         <div>
                             <div class="flex justify-between mb-2">
-                                <span class="text-gray-700">Kubernetes</span>
-                                <span class="text-red-600 font-semibold">85%</span>
+                                <span class="text-gray-700">Kubernetes (EKS, AKS)</span>
+                                <span class="text-red-600 font-semibold">88%</span>
                             </div>
                             <div class="w-full bg-gray-200 rounded-full h-2">
-                                <div class="progress-bar h-2 rounded-full" style="width: 85%"></div>
+                                <div class="progress-bar h-2 rounded-full" style="width: 88%"></div>
                             </div>
                         </div>
                         <div>
                             <div class="flex justify-between mb-2">
-                                <span class="text-gray-700">Helm</span>
+                                <span class="text-gray-700">Helm Charts</span>
                                 <span class="text-red-600 font-semibold">82%</span>
                             </div>
                             <div class="w-full bg-gray-200 rounded-full h-2">
@@ -418,18 +441,18 @@
                     </div>
                 </div>
 
-                <!-- Automation & IaC -->
+                <!-- CI/CD & Automation -->
                 <div class="bg-white p-8 rounded-lg shadow-sm card-hover slide-up">
                     <div class="flex items-center mb-6">
                         <div class="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mr-4">
                             <i class="fas fa-cogs text-red-600 text-xl"></i>
                         </div>
-                        <h3 class="text-xl font-semibold text-gray-900">Automation</h3>
+                        <h3 class="text-xl font-semibold text-gray-900">CI/CD & Automation</h3>
                     </div>
                     <div class="space-y-4">
                         <div>
                             <div class="flex justify-between mb-2">
-                                <span class="text-gray-700">Terraform</span>
+                                <span class="text-gray-700">Jenkins</span>
                                 <span class="text-red-600 font-semibold">92%</span>
                             </div>
                             <div class="w-full bg-gray-200 rounded-full h-2">
@@ -438,20 +461,137 @@
                         </div>
                         <div>
                             <div class="flex justify-between mb-2">
-                                <span class="text-gray-700">Ansible</span>
-                                <span class="text-red-600 font-semibold">87%</span>
-                            </div>
-                            <div class="w-full bg-gray-200 rounded-full h-2">
-                                <div class="progress-bar h-2 rounded-full" style="width: 87%"></div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="flex justify-between mb-2">
-                                <span class="text-gray-700">Jenkins</span>
+                                <span class="text-gray-700">GitLab CI/CD</span>
                                 <span class="text-red-600 font-semibold">88%</span>
                             </div>
                             <div class="w-full bg-gray-200 rounded-full h-2">
                                 <div class="progress-bar h-2 rounded-full" style="width: 88%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="text-gray-700">GitHub Actions</span>
+                                <span class="text-red-600 font-semibold">85%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="progress-bar h-2 rounded-full" style="width: 85%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Infrastructure as Code -->
+                <div class="bg-white p-8 rounded-lg shadow-sm card-hover slide-up">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mr-4">
+                            <i class="fas fa-code text-red-600 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900">Infrastructure as Code</h3>
+                    </div>
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="text-gray-700">Terraform</span>
+                                <span class="text-red-600 font-semibold">95%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="progress-bar h-2 rounded-full" style="width: 95%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="text-gray-700">CloudFormation</span>
+                                <span class="text-red-600 font-semibold">85%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="progress-bar h-2 rounded-full" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="text-gray-700">ARM Templates</span>
+                                <span class="text-red-600 font-semibold">80%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="progress-bar h-2 rounded-full" style="width: 80%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Security & Compliance -->
+                <div class="bg-white p-8 rounded-lg shadow-sm card-hover slide-up">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mr-4">
+                            <i class="fas fa-shield-alt text-red-600 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900">Security & Compliance</h3>
+                    </div>
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="text-gray-700">AWS Security (IAM, GuardDuty)</span>
+                                <span class="text-red-600 font-semibold">90%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="progress-bar h-2 rounded-full" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="text-gray-700">Security Tools (Snyk, Wiz)</span>
+                                <span class="text-red-600 font-semibold">88%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="progress-bar h-2 rounded-full" style="width: 88%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="text-gray-700">HIPAA Compliance</span>
+                                <span class="text-red-600 font-semibold">85%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="progress-bar h-2 rounded-full" style="width: 85%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Monitoring & Observability -->
+                <div class="bg-white p-8 rounded-lg shadow-sm card-hover slide-up">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mr-4">
+                            <i class="fas fa-chart-line text-red-600 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900">Monitoring & Observability</h3>
+                    </div>
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="text-gray-700">Prometheus & Grafana</span>
+                                <span class="text-red-600 font-semibold">88%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="progress-bar h-2 rounded-full" style="width: 88%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="text-gray-700">Datadog & New Relic</span>
+                                <span class="text-red-600 font-semibold">85%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="progress-bar h-2 rounded-full" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="text-gray-700">PagerDuty & Coralogix</span>
+                                <span class="text-red-600 font-semibold">82%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="progress-bar h-2 rounded-full" style="width: 82%"></div>
                             </div>
                         </div>
                     </div>
@@ -663,74 +803,126 @@
             </div>
             
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="bg-white p-8 rounded-lg shadow-sm card-hover slide-up">
+                <div class="bg-white p-8 rounded-lg shadow-sm project-card slide-up">
                     <div class="flex items-center justify-between mb-4">
-                        <h3 class="text-xl font-bold text-gray-900">Multi-Cloud Infrastructure</h3>
+                        <h3 class="text-xl font-bold text-gray-900">AWS Landing Zone Solution</h3>
                         <i class="fas fa-external-link-alt text-red-600"></i>
                     </div>
                     <p class="text-gray-600 mb-6">
-                        Terraform-based infrastructure spanning AWS, Azure, and GCP with automated failover capabilities and cross-cloud networking.
+                        Designed and implemented enterprise-grade AWS Landing Zone with multi-account architecture, automated governance, and centralized security controls for scalable cloud adoption.
                     </p>
                     <div class="flex flex-wrap gap-2 mb-6">
-                        <span class="bg-orange-100 text-orange-800 px-2 py-1 rounded text-xs">Terraform</span>
-                        <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs">AWS</span>
-                        <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-xs">Azure</span>
-                        <span class="bg-purple-100 text-purple-800 px-2 py-1 rounded text-xs">GCP</span>
+                        <span class="bg-orange-100 text-orange-800 px-2 py-1 rounded text-xs">AWS</span>
+                        <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-xs">Terraform</span>
+                        <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs">Control Tower</span>
+                        <span class="bg-purple-100 text-purple-800 px-2 py-1 rounded text-xs">Landing Zone</span>
+                        <span class="bg-red-100 text-red-800 px-2 py-1 rounded text-xs">IAM</span>
                     </div>
                     <div class="flex justify-between items-center">
                         <div class="flex space-x-4 text-sm text-gray-500">
-                            <span><i class="fas fa-star text-yellow-500 mr-1"></i>4.9</span>
-                            <span><i class="fas fa-code-branch text-blue-500 mr-1"></i>23</span>
+                            <span><i class="fas fa-star text-yellow-500 mr-1"></i>5.0</span>
                         </div>
-                        <button class="text-red-600 hover:text-red-700 font-semibold text-sm">
+                        <button onclick="scrollToSection('contact')" class="text-red-600 hover:text-red-700 font-semibold text-sm">
                             View Project <i class="fas fa-arrow-right ml-1"></i>
                         </button>
                     </div>
                 </div>
 
-                <div class="bg-white p-8 rounded-lg shadow-sm card-hover slide-up">
+                <div class="bg-white p-8 rounded-lg shadow-sm project-card slide-up">
                     <div class="flex items-center justify-between mb-4">
-                        <h3 class="text-xl font-bold text-gray-900">K8s Monitoring Stack</h3>
+                        <h3 class="text-xl font-bold text-gray-900">Enterprise CI/CD Pipeline</h3>
                         <i class="fas fa-external-link-alt text-red-600"></i>
                     </div>
                     <p class="text-gray-600 mb-6">
-                        Complete monitoring solution for Kubernetes clusters with custom dashboards, alerting, and automated scaling.
-                    </p>
-                    <div class="flex flex-wrap gap-2 mb-6">
-                        <span class="bg-purple-100 text-purple-800 px-2 py-1 rounded text-xs">Kubernetes</span>
-                        <span class="bg-red-100 text-red-800 px-2 py-1 rounded text-xs">Prometheus</span>
-                        <span class="bg-yellow-100 text-yellow-800 px-2 py-1 rounded text-xs">Grafana</span>
-                    </div>
-                    <div class="flex justify-between items-center">
-                        <div class="flex space-x-4 text-sm text-gray-500">
-                            <span><i class="fas fa-star text-yellow-500 mr-1"></i>4.8</span>
-                            <span><i class="fas fa-code-branch text-blue-500 mr-1"></i>18</span>
-                        </div>
-                        <button class="text-red-600 hover:text-red-700 font-semibold text-sm">
-                            View Project <i class="fas fa-arrow-right ml-1"></i>
-                        </button>
-                    </div>
-                </div>
-
-                <div class="bg-white p-8 rounded-lg shadow-sm card-hover slide-up">
-                    <div class="flex items-center justify-between mb-4">
-                        <h3 class="text-xl font-bold text-gray-900">Universal CI/CD</h3>
-                        <i class="fas fa-external-link-alt text-red-600"></i>
-                    </div>
-                    <p class="text-gray-600 mb-6">
-                        Reusable CI/CD framework supporting multiple languages, deployment targets, and automated testing with security scanning.
+                        Built comprehensive CI/CD pipeline for private server infrastructure with automated testing, security scanning, and zero-downtime deployments across multiple environments.
                     </p>
                     <div class="flex flex-wrap gap-2 mb-6">
                         <span class="bg-red-100 text-red-800 px-2 py-1 rounded text-xs">Jenkins</span>
                         <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs">Docker</span>
                         <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-xs">GitLab</span>
+                        <span class="bg-purple-100 text-purple-800 px-2 py-1 rounded text-xs">Kubernetes</span>
+                        <span class="bg-yellow-100 text-yellow-800 px-2 py-1 rounded text-xs">SonarQube</span>
                     </div>
                     <div class="flex justify-between items-center">
                         <div class="flex space-x-4 text-sm text-gray-500">
-                            <span><i class="fas fa-star text-yellow-500 mr-1"></i>4.7</span>
-                            <span><i class="fas fa-code-branch text-blue-500 mr-1"></i>31</span>
+                            <span><i class="fas fa-star text-yellow-500 mr-1"></i>5.0</span>
                         </div>
-                        <button class="text-red-600 hover:text-red-700 font-semibold text-sm">
+                        <button onclick="scrollToSection('contact')" class="text-red-600 hover:text-red-700 font-semibold text-sm">
+                            View Project <i class="fas fa-arrow-right ml-1"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="bg-white p-8 rounded-lg shadow-sm project-card slide-up">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="text-xl font-bold text-gray-900">Healthcare Security Platform</h3>
+                        <i class="fas fa-external-link-alt text-red-600"></i>
+                    </div>
+                    <p class="text-gray-600 mb-6">
+                        Developed HIPAA-compliant security platform for healthcare services with real-time threat detection, automated compliance monitoring, and secure data handling protocols.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs">Azure</span>
+                        <span class="bg-red-100 text-red-800 px-2 py-1 rounded text-xs">Security</span>
+                        <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-xs">HIPAA</span>
+                        <span class="bg-purple-100 text-purple-800 px-2 py-1 rounded text-xs">Monitoring</span>
+                        <span class="bg-yellow-100 text-yellow-800 px-2 py-1 rounded text-xs">Compliance</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <div class="flex space-x-4 text-sm text-gray-500">
+                            <span><i class="fas fa-star text-yellow-500 mr-1"></i>5.0</span>
+                        </div>
+                        <button onclick="scrollToSection('contact')" class="text-red-600 hover:text-red-700 font-semibold text-sm">
+                            View Project <i class="fas fa-arrow-right ml-1"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="bg-white p-8 rounded-lg shadow-sm project-card slide-up">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="text-xl font-bold text-gray-900">Manufacturing DevOps Platform</h3>
+                        <i class="fas fa-external-link-alt text-red-600"></i>
+                    </div>
+                    <p class="text-gray-600 mb-6">
+                        Implemented end-to-end DevOps platform for manufacturing industry with automated quality assurance, production monitoring, and IoT device integration for operational excellence.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="bg-orange-100 text-orange-800 px-2 py-1 rounded text-xs">AWS</span>
+                        <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-xs">Kubernetes</span>
+                        <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs">IoT</span>
+                        <span class="bg-purple-100 text-purple-800 px-2 py-1 rounded text-xs">Monitoring</span>
+                        <span class="bg-red-100 text-red-800 px-2 py-1 rounded text-xs">Automation</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <div class="flex space-x-4 text-sm text-gray-500">
+                            <span><i class="fas fa-star text-yellow-500 mr-1"></i>5.0</span>
+                        </div>
+                        <button onclick="scrollToSection('contact')" class="text-red-600 hover:text-red-700 font-semibold text-sm">
+                            View Project <i class="fas fa-arrow-right ml-1"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="bg-white p-8 rounded-lg shadow-sm project-card slide-up">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="text-xl font-bold text-gray-900">Education Technology Platform</h3>
+                        <i class="fas fa-external-link-alt text-red-600"></i>
+                    </div>
+                    <p class="text-gray-600 mb-6">
+                        Built scalable education technology platform with secure student data management, automated grading systems, and real-time collaboration tools for remote learning environments.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs">Azure</span>
+                        <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-xs">DevOps</span>
+                        <span class="bg-purple-100 text-purple-800 px-2 py-1 rounded text-xs">Security</span>
+                        <span class="bg-yellow-100 text-yellow-800 px-2 py-1 rounded text-xs">Scalability</span>
+                        <span class="bg-red-100 text-red-800 px-2 py-1 rounded text-xs">Automation</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <div class="flex space-x-4 text-sm text-gray-500">
+                            <span><i class="fas fa-star text-yellow-500 mr-1"></i>5.0</span>
+                        </div>
+                        <button onclick="scrollToSection('contact')" class="text-red-600 hover:text-red-700 font-semibold text-sm">
                             View Project <i class="fas fa-arrow-right ml-1"></i>
                         </button>
                     </div>
@@ -856,7 +1048,7 @@
                             </div>
                             <div class="flex justify-between">
                                 <span class="text-gray-600">Latest Earned</span>
-                                <span class="font-bold text-gray-900">Dec 2024</span>
+                                <span class="font-bold text-gray-900">Jul 2025</span>
                             </div>
                         </div>
                     </div>
@@ -1080,27 +1272,42 @@
         
         // Initialize everything when DOM is loaded
         document.addEventListener('DOMContentLoaded', function() {
-            typeWriter();
-            initAnimations();
+            // Use requestIdleCallback for non-critical animations
+            if ('requestIdleCallback' in window) {
+                requestIdleCallback(() => {
+                    typeWriter();
+                    initAnimations();
+                });
+            } else {
+                setTimeout(() => {
+                    typeWriter();
+                    initAnimations();
+                }, 100);
+            }
             
             // Animate progress bars when they come into view
             const progressBars = document.querySelectorAll('.progress-bar');
-            const progressObserver = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const width = entry.target.style.width;
-                        entry.target.style.width = '0%';
-                        setTimeout(() => {
-                            entry.target.style.width = width;
-                        }, 200);
-                    }
+            if (progressBars.length > 0) {
+                const progressObserver = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const width = entry.target.style.width;
+                            entry.target.style.width = '0%';
+                            requestAnimationFrame(() => {
+                                setTimeout(() => {
+                                    entry.target.style.width = width;
+                                }, 200);
+                            });
+                        }
+                    });
                 });
-            });
-            
-            progressBars.forEach(bar => {
-                progressObserver.observe(bar);
-            });
+                
+                progressBars.forEach(bar => {
+                    progressObserver.observe(bar);
+                });
+            }
         });
     </script>
 <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9723842bd4e17f37',t:'MTc1NTcwOTk1NC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
+
