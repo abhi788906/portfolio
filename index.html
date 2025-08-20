@@ -25,6 +25,29 @@
             --text-gray: #6b7280;
             --bg-light: #fafafa;
             --border-light: #e5e7eb;
+            
+            /* Light theme colors */
+            --bg-primary: #ffffff;
+            --bg-secondary: #fafafa;
+            --text-primary: #1f2937;
+            --text-secondary: #6b7280;
+            --border-color: #e5e7eb;
+            --card-bg: #ffffff;
+            --nav-bg: rgba(255, 255, 255, 0.95);
+        }
+
+        /* Dark theme colors */
+        [data-theme="dark"] {
+            --bg-primary: #111827;
+            --bg-secondary: #1f2937;
+            --text-primary: #ffffff;
+            --text-secondary: #e5e7eb;
+            --border-color: #374151;
+            --card-bg: #1f2937;
+            --nav-bg: rgba(17, 24, 39, 0.95);
+            --card-border: rgba(255, 255, 255, 0.1);
+            --section-bg: #1f2937;
+            --skill-bg: #374151;
         }
 
         body {
@@ -97,7 +120,7 @@
         }
 
         .card-hover:hover {
-            transform: translateY(-5px) rotateY(5deg);
+            transform: translateY(-8px) scale(1.03) rotateY(5deg);
             box-shadow: 0 20px 25px -5px rgba(220, 38, 38, 0.1), 0 10px 10px -5px rgba(220, 38, 38, 0.04);
         }
 
@@ -109,7 +132,7 @@
         }
 
         .project-card:hover {
-            transform: rotateY(8deg) translateY(-8px);
+            transform: rotateY(8deg) translateY(-8px) scale(1.04);
             box-shadow: 0 25px 35px -5px rgba(220, 38, 38, 0.15), 0 15px 15px -5px rgba(220, 38, 38, 0.08);
         }
 
@@ -308,6 +331,30 @@
                 font-size: 0.875rem;
                 line-height: 1.5;
             }
+            
+            /* Enhanced mobile experience */
+            .floating-shapes {
+                display: none; /* Hide on mobile for better performance */
+            }
+            
+            /* Better touch targets */
+            button, a {
+                min-height: 44px;
+                min-width: 44px;
+            }
+            
+            /* Improved mobile navigation */
+            .mobile-nav-item {
+                padding: 1rem;
+                margin: 0.25rem 0;
+                border-radius: 12px;
+                transition: all 0.3s ease;
+            }
+            
+            .mobile-nav-item:active {
+                transform: scale(0.95);
+                background-color: rgba(220, 38, 38, 0.1);
+            }
         }
 
         @media (max-width: 480px) {
@@ -426,7 +473,21 @@
             -webkit-text-fill-color: transparent;
             background-clip: text;
             text-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            font-weight: 700;
         }
+
+        /* Dark mode title styling */
+        [data-theme="dark"] .hero-title {
+            background: none;
+            -webkit-background-clip: unset;
+            -webkit-text-fill-color: unset;
+            background-clip: unset;
+            color: #ffffff;
+            font-weight: 900;
+            text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+
 
         .section-title {
             position: relative;
@@ -450,13 +511,14 @@
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
             border: 1px solid rgba(220, 38, 38, 0.1);
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+            transform: translateY(0) scale(1);
         }
 
         .enhanced-card-modern:hover {
-            transform: translateY(-8px) scale(1.02);
-            box-shadow: 0 25px 50px rgba(220, 38, 38, 0.15);
-            border-color: rgba(220, 38, 38, 0.3);
+            transform: translateY(-8px) scale(1.05) !important;
+            box-shadow: 0 25px 50px rgba(220, 38, 38, 0.15) !important;
+            border-color: rgba(220, 38, 38, 0.3) !important;
         }
 
         /* Improved Progress Bars */
@@ -475,9 +537,293 @@
             from { width: 0%; }
             to { width: var(--progress-width); }
         }
+
+        /* Dark Mode Content Visibility Fixes */
+        [data-theme="dark"] {
+            /* Background colors */
+            background: var(--bg-primary);
+            color: var(--text-primary);
+        }
+
+        [data-theme="dark"] .bg-white {
+            background: var(--card-bg) !important;
+            border-color: var(--card-border) !important;
+        }
+
+        [data-theme="dark"] .bg-gray-50 {
+            background: var(--section-bg) !important;
+        }
+
+        [data-theme="dark"] .text-gray-900 {
+            color: var(--text-primary) !important;
+        }
+
+        [data-theme="dark"] .text-gray-700 {
+            color: var(--text-secondary) !important;
+        }
+
+        [data-theme="dark"] .github-actions-text {
+            color: var(--text-primary) !important;
+            font-weight: 600 !important;
+        }
+
+        [data-theme="dark"] .text-gray-600 {
+            color: var(--text-secondary) !important;
+        }
+
+        [data-theme="dark"] .text-gray-500 {
+            color: #9ca3af !important;
+        }
+
+        [data-theme="dark"] .text-gray-400 {
+            color: #9ca3af !important;
+        }
+
+        [data-theme="dark"] .border-gray-200 {
+            border-color: var(--border-color) !important;
+        }
+
+        [data-theme="dark"] .border-gray-300 {
+            border-color: var(--border-color) !important;
+        }
+
+        [data-theme="dark"] .bg-gray-100 {
+            background: var(--skill-bg) !important;
+        }
+
+        [data-theme="dark"] .bg-gray-200 {
+            background: var(--skill-bg) !important;
+        }
+
+        [data-theme="dark"] .bg-orange-100,
+        [data-theme="dark"] .bg-red-100,
+        [data-theme="dark"] .bg-green-100,
+        [data-theme="dark"] .bg-blue-100,
+        [data-theme="dark"] .bg-cyan-100,
+        [data-theme="dark"] .bg-purple-100,
+        [data-theme="dark"] .bg-indigo-100,
+        [data-theme="dark"] .bg-yellow-100 {
+            background: rgba(255, 255, 255, 0.1) !important;
+        }
+
+        [data-theme="dark"] .text-orange-800,
+        [data-theme="dark"] .text-red-800,
+        [data-theme="dark"] .text-green-800,
+        [data-theme="dark"] .text-blue-800,
+        [data-theme="dark"] .text-cyan-800,
+        [data-theme="dark"] .text-purple-800,
+        [data-theme="dark"] .text-indigo-800,
+        [data-theme="dark"] .text-yellow-800 {
+            color: var(--text-primary) !important;
+        }
+
+        [data-theme="dark"] .bg-gradient-to-br.from-gray-50.to-red-50 {
+            background: linear-gradient(to bottom right, var(--section-bg), #1f2937) !important;
+        }
+
+        [data-theme="dark"] .shadow-sm {
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.5) !important;
+        }
+
+        [data-theme="dark"] .shadow-lg {
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5) !important;
+        }
+
+        [data-theme="dark"] .bg-white\/95 {
+            background: rgba(31, 41, 55, 0.95) !important;
+        }
+
+        [data-theme="dark"] .bg-white\/95.backdrop-blur-sm {
+            background: rgba(31, 41, 55, 0.95) !important;
+        }
+
+        /* Form and input styling for dark mode */
+        [data-theme="dark"] input,
+        [data-theme="dark"] select,
+        [data-theme="dark"] textarea {
+            background: var(--card-bg) !important;
+            border-color: var(--border-color) !important;
+            color: var(--text-primary) !important;
+        }
+
+        [data-theme="dark"] input:focus,
+        [data-theme="dark"] select:focus,
+        [data-theme="dark"] textarea:focus {
+            border-color: #dc2626 !important;
+            box-shadow: 0 0 0 2px rgba(220, 38, 38, 0.2) !important;
+        }
+
+        [data-theme="dark"] .bg-gradient-to-br.from-red-50.to-red-100 {
+            background: linear-gradient(to bottom right, #1f2937, #374151) !important;
+        }
+
+        [data-theme="dark"] .bg-gray-900 {
+            background: var(--bg-primary) !important;
+        }
+
+        [data-theme="dark"] .text-white {
+            color: var(--text-primary) !important;
+        }
+
+        [data-theme="dark"] .text-gray-300 {
+            color: var(--text-secondary) !important;
+        }
+
+        [data-theme="dark"] .hover\:bg-red-50:hover {
+            background: rgba(220, 38, 38, 0.1) !important;
+        }
+
+        [data-theme="dark"] .hover\:bg-gray-50:hover {
+            background: rgba(255, 255, 255, 0.05) !important;
+        }
+
+        /* Technology tags dark mode styling */
+        [data-theme="dark"] .bg-gray-100.text-gray-800 {
+            background: rgba(255, 255, 255, 0.1) !important;
+            color: var(--text-primary) !important;
+        }
+
+        [data-theme="dark"] .bg-gray-100.text-gray-800,
+        [data-theme="dark"] .bg-orange-100.text-orange-800,
+        [data-theme="dark"] .bg-red-100.text-red-800,
+        [data-theme="dark"] .bg-green-100.text-green-800,
+        [data-theme="dark"] .bg-blue-100.text-blue-800,
+        [data-theme="dark"] .bg-cyan-100.text-cyan-800,
+        [data-theme="dark"] .bg-purple-100.text-purple-800,
+        [data-theme="dark"] .bg-indigo-100.text-indigo-800,
+        [data-theme="dark"] .bg-yellow-100.text-yellow-800 {
+            color: var(--text-primary) !important;
+            font-weight: 500 !important;
+        }
+
+        /* Timeline and experience section dark mode fixes */
+        [data-theme="dark"] .bg-red-200 {
+            background: rgba(220, 38, 38, 0.2) !important;
+        }
+
+        [data-theme="dark"] .bg-red-100 {
+            background: rgba(220, 38, 38, 0.1) !important;
+        }
+
+        [data-theme="dark"] .bg-orange-100 {
+            background: rgba(249, 115, 22, 0.1) !important;
+        }
+
+        [data-theme="dark"] .bg-green-100 {
+            background: rgba(34, 197, 94, 0.1) !important;
+        }
+
+        [data-theme="dark"] .bg-blue-100 {
+            background: rgba(59, 130, 246, 0.1) !important;
+        }
+
+        [data-theme="dark"] .bg-cyan-100 {
+            background: rgba(6, 182, 212, 0.1) !important;
+        }
+
+        [data-theme="dark"] .bg-purple-100 {
+            background: rgba(147, 51, 234, 0.1) !important;
+        }
+
+        [data-theme="dark"] .bg-indigo-100 {
+            background: rgba(99, 102, 241, 0.1) !important;
+        }
+
+        [data-theme="dark"] .bg-yellow-100 {
+            background: rgba(234, 179, 8, 0.1) !important;
+        }
+
+        /* Progress bar background for dark mode */
+        [data-theme="dark"] .bg-gray-200 {
+            background: rgba(255, 255, 255, 0.1) !important;
+        }
+
+        /* Footer dark mode */
+        [data-theme="dark"] .bg-gray-900 {
+            background: var(--bg-primary) !important;
+        }
+
+        [data-theme="dark"] .text-gray-400 {
+            color: #9ca3af !important;
+        }
+
+        [data-theme="dark"] .hover\:text-red-400:hover {
+            color: #f87171 !important;
+        }
+
+        /* Custom navigation hover effects */
+        .nav-link:hover {
+            color: #dc2626 !important;
+            font-weight: 700 !important;
+            transform: scale(1.05) !important;
+        }
+
+        [data-theme="dark"] .nav-link:hover {
+            color: #ffffff !important;
+            font-weight: 700 !important;
+            transform: scale(1.05) !important;
+        }
+
+        /* Mobile navigation hover effects */
+        .mobile-nav-item:hover {
+            color: #dc2626 !important;
+            font-weight: 700 !important;
+        }
+
+        [data-theme="dark"] .mobile-nav-item:hover {
+            color: #ffffff !important;
+            font-weight: 700 !important;
+        }
+
+        /* Enhanced hover effects for dark mode */
+        [data-theme="dark"] .enhanced-card-modern:hover {
+            transform: translateY(-8px) scale(1.05) !important;
+            box-shadow: 0 25px 50px rgba(220, 38, 38, 0.3) !important;
+            border-color: rgba(220, 38, 38, 0.5) !important;
+        }
+
+        [data-theme="dark"] .card-hover:hover {
+            transform: translateY(-8px) scale(1.03) rotateY(5deg) !important;
+            box-shadow: 0 20px 25px -5px rgba(220, 38, 38, 0.2), 0 10px 10px -5px rgba(220, 38, 38, 0.1) !important;
+        }
+
+        [data-theme="dark"] .project-card:hover {
+            transform: rotateY(8deg) translateY(-8px) scale(1.04) !important;
+            box-shadow: 0 25px 35px -5px rgba(220, 38, 38, 0.3), 0 15px 15px -5px rgba(220, 38, 38, 0.15) !important;
+        }
+
+        /* Floating shapes dark mode */
+        [data-theme="dark"] .floating-shape:nth-child(1) {
+            background: linear-gradient(45deg, #dc2626, #ef4444);
+            opacity: 0.15;
+        }
+
+        [data-theme="dark"] .floating-shape:nth-child(2) {
+            background: linear-gradient(45deg, #dc2626, #f87171);
+            opacity: 0.15;
+        }
+
+        [data-theme="dark"] .floating-shape:nth-child(3) {
+            background: linear-gradient(45deg, #ef4444, #dc2626);
+            opacity: 0.15;
+        }
+
+        /* Loading skeleton dark mode */
+        [data-theme="dark"] #loading-skeleton {
+            background: var(--bg-primary) !important;
+        }
+
+        [data-theme="dark"] #loading-skeleton .text-gray-600 {
+            color: var(--text-secondary) !important;
+        }
+
+        /* Scroll progress dark mode */
+        [data-theme="dark"] .bg-gray-200 {
+            background: rgba(255, 255, 255, 0.1) !important;
+        }
     </style>
 </head>
-<body class="bg-white text-gray-900">
+<body class="transition-all duration-300" data-theme="light" style="background: var(--bg-primary); color: var(--text-primary);">
     <!-- Floating Background Shapes -->
     <div class="floating-shapes">
         <div class="floating-shape"></div>
@@ -485,50 +831,62 @@
         <div class="floating-shape"></div>
     </div>
 
+    <!-- Skip to Content Link (Accessibility) -->
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-red-600 text-white px-4 py-2 rounded-lg z-50">Skip to main content</a>
+
     <!-- Navigation -->
-    <nav class="fixed top-0 w-full bg-white/95 backdrop-blur-sm z-50 border-b border-gray-200 shadow-sm enhanced-card">
+    <nav class="fixed top-0 w-full z-50 border-b shadow-sm enhanced-card transition-all duration-300" style="background: var(--nav-bg); border-color: var(--border-color);">
         <div class="max-w-7xl mx-auto px-4 py-4">
             <div class="flex justify-between items-center">
                 <div class="flex items-center space-x-3">
+                    <!-- Dark Mode Toggle Slider -->
+                    <div class="flex items-center space-x-2">
+                        <i class="fas fa-sun text-yellow-500 text-sm"></i>
+                        <label class="relative inline-flex items-center cursor-pointer">
+                            <input type="checkbox" id="theme-toggle" class="sr-only" onchange="toggleTheme()">
+                            <div class="w-11 h-6 bg-gray-200 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-red-600"></div>
+                        </label>
+                        <i class="fas fa-moon text-gray-600 text-sm"></i>
+                    </div>
                     <div class="status-online pulse-glow"></div>
-                    <div class="font-mono font-semibold text-gray-900 gradient-text">abhishek@devops:~$</div>
+                    <div class="font-mono font-semibold gradient-text" style="color: var(--text-primary);">abhishek@devops:~$</div>
                 </div>
                 
                 <!-- Desktop Navigation -->
                 <div class="hidden lg:flex space-x-8 font-medium">
-                    <button onclick="scrollToSection('about')" class="nav-link text-gray-700 hover:text-red-600 transition-all duration-300 hover:scale-105">About</button>
-                    <button onclick="scrollToSection('skills')" class="nav-link text-gray-700 hover:text-red-600 transition-all duration-300 hover:scale-105">Skills</button>
-                    <button onclick="scrollToSection('experience')" class="nav-link text-gray-700 hover:text-red-600 transition-all duration-300 hover:scale-105">Experience</button>
-                    <button onclick="scrollToSection('projects')" class="nav-link text-gray-700 hover:text-red-600 transition-all duration-300 hover:scale-105">Projects</button>
-                    <button onclick="scrollToSection('certifications')" class="nav-link text-gray-700 hover:text-red-600 transition-all duration-300 hover:scale-105">Certifications</button>
-                    <button onclick="scrollToSection('contact')" class="nav-link text-gray-700 hover:text-red-600 transition-all duration-300 hover:scale-105">Contact</button>
+                    <button onclick="scrollToSection('about')" class="nav-link transition-all duration-300 hover:scale-105" style="color: var(--text-secondary);">About</button>
+                    <button onclick="scrollToSection('skills')" class="nav-link transition-all duration-300 hover:scale-105" style="color: var(--text-secondary);">Skills</button>
+                    <button onclick="scrollToSection('experience')" class="nav-link transition-all duration-300 hover:scale-105" style="color: var(--text-secondary);">Experience</button>
+                    <button onclick="scrollToSection('projects')" class="nav-link transition-all duration-300 hover:scale-105" style="color: var(--text-secondary);">Projects</button>
+                    <button onclick="scrollToSection('certifications')" class="nav-link transition-all duration-300 hover:scale-105" style="color: var(--text-secondary);">Certifications</button>
+                    <button onclick="scrollToSection('contact')" class="nav-link transition-all duration-300 hover:scale-105" style="color: var(--text-secondary);">Contact</button>
                 </div>
                 
                 <!-- Mobile Menu Button -->
-                <button onclick="toggleMobileMenu()" class="lg:hidden p-2 text-gray-700 hover:text-red-600 transition-all duration-300 hover:scale-110">
+                <button onclick="toggleMobileMenu()" class="lg:hidden p-2 hover:text-red-600 transition-all duration-300 hover:scale-110" style="color: var(--text-secondary);">
                     <i class="fas fa-bars text-xl"></i>
                 </button>
             </div>
             
             <!-- Enhanced Mobile Menu -->
-            <div id="mobile-menu" class="lg:hidden mobile-nav hidden mt-4 pb-4 border-t border-gray-200 bg-white/95 backdrop-blur-sm rounded-lg shadow-lg">
+            <div id="mobile-menu" class="lg:hidden mobile-nav hidden mt-4 pb-4 border-t backdrop-blur-sm rounded-lg shadow-lg" style="border-color: var(--border-color); background: var(--nav-bg);">
                 <div class="flex flex-col space-y-3 pt-4 px-4">
-                    <button onclick="scrollToSection('about'); toggleMobileMenu();" class="mobile-nav-item text-left text-gray-700 hover:text-red-600 transition-all duration-300 py-2 px-3 rounded-lg hover:bg-red-50">
+                    <button onclick="scrollToSection('about'); toggleMobileMenu();" class="mobile-nav-item text-left transition-all duration-300 py-2 px-3 rounded-lg hover:bg-red-50" style="color: var(--text-secondary);">
                         <i class="fas fa-user mr-2"></i>About
                     </button>
-                    <button onclick="scrollToSection('skills'); toggleMobileMenu();" class="mobile-nav-item text-left text-gray-700 hover:text-red-600 transition-all duration-300 py-2 px-3 rounded-lg hover:bg-red-50">
+                    <button onclick="scrollToSection('skills'); toggleMobileMenu();" class="mobile-nav-item text-left transition-all duration-300 py-2 px-3 rounded-lg hover:bg-red-50" style="color: var(--text-secondary);">
                         <i class="fas fa-cogs mr-2"></i>Skills
                     </button>
-                    <button onclick="scrollToSection('experience'); toggleMobileMenu();" class="mobile-nav-item text-left text-gray-700 hover:text-red-600 transition-all duration-300 py-2 px-3 rounded-lg hover:bg-red-50">
+                    <button onclick="scrollToSection('experience'); toggleMobileMenu();" class="mobile-nav-item text-left transition-all duration-300 py-2 px-3 rounded-lg hover:bg-red-50" style="color: var(--text-secondary);">
                         <i class="fas fa-briefcase mr-2"></i>Experience
                     </button>
-                    <button onclick="scrollToSection('projects'); toggleMobileMenu();" class="mobile-nav-item text-left text-gray-700 hover:text-red-600 transition-all duration-300 py-2 px-3 rounded-lg hover:bg-red-50">
+                    <button onclick="scrollToSection('projects'); toggleMobileMenu();" class="mobile-nav-item text-left transition-all duration-300 py-2 px-3 rounded-lg hover:bg-red-50" style="color: var(--text-secondary);">
                         <i class="fas fa-project-diagram mr-2"></i>Projects
                     </button>
-                    <button onclick="scrollToSection('certifications'); toggleMobileMenu();" class="mobile-nav-item text-left text-gray-700 hover:text-red-600 transition-all duration-300 py-2 px-3 rounded-lg hover:bg-red-50">
+                    <button onclick="scrollToSection('certifications'); toggleMobileMenu();" class="mobile-nav-item text-left transition-all duration-300 py-2 px-3 rounded-lg hover:bg-red-50" style="color: var(--text-secondary);">
                         <i class="fas fa-certificate mr-2"></i>Certifications
                     </button>
-                    <button onclick="scrollToSection('contact'); toggleMobileMenu();" class="mobile-nav-item text-left text-gray-700 hover:text-red-600 transition-all duration-300 py-2 px-3 rounded-lg hover:bg-red-50">
+                    <button onclick="scrollToSection('contact'); toggleMobileMenu();" class="mobile-nav-item text-left transition-all duration-300 py-2 px-3 rounded-lg hover:bg-red-50" style="color: var(--text-secondary);">
                         <i class="fas fa-envelope mr-2"></i>Contact
                     </button>
                 </div>
@@ -536,8 +894,16 @@
         </div>
     </nav>
 
+    <!-- Loading Skeleton -->
+    <div id="loading-skeleton" class="fixed inset-0 bg-white z-50 flex items-center justify-center">
+        <div class="text-center">
+            <div class="w-16 h-16 border-4 border-red-200 border-t-red-600 rounded-full animate-spin mx-auto mb-4"></div>
+            <p class="text-gray-600 font-mono">Loading portfolio...</p>
+        </div>
+    </div>
+
     <!-- Hero Section -->
-    <section class="pt-24 pb-20 px-4 bg-gradient-to-br from-gray-50 to-red-50">
+    <section id="main-content" class="pt-24 pb-20 px-4 bg-gradient-to-br from-gray-50 to-red-50">
         <div class="max-w-7xl mx-auto text-center">
             <!-- Profile Image -->
             <div class="mb-8 fade-in floating-animation profile-image-container">
@@ -704,7 +1070,7 @@
                 </div>
 
                 <!-- Containers & Orchestration -->
-                <div class="bg-white p-8 rounded-lg shadow-sm card-hover slide-up enhanced-card-modern">
+                <div class="bg-white p-8 rounded-lg shadow-sm card-hover slide-up enhanced-card enhanced-card-modern">
                     <div class="flex items-center mb-6">
                         <div class="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mr-4">
                             <i class="fab fa-docker text-red-600 text-xl"></i>
@@ -743,7 +1109,7 @@
                 </div>
 
                 <!-- CI/CD & Automation -->
-                <div class="bg-white p-8 rounded-lg shadow-sm card-hover slide-up">
+                <div class="bg-white p-8 rounded-lg shadow-sm card-hover slide-up enhanced-card enhanced-card-modern">
                     <div class="flex items-center mb-6">
                         <div class="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mr-4">
                             <i class="fas fa-cogs text-red-600 text-xl"></i>
@@ -771,7 +1137,7 @@
                         </div>
                         <div>
                             <div class="flex justify-between mb-2">
-                                <span class="text-gray-700">GitHub Actions</span>
+                                <span class="text-gray-700 github-actions-text">GitHub Actions</span>
                                 <span class="text-red-600 font-semibold">85%</span>
                             </div>
                             <div class="w-full bg-gray-200 rounded-full h-2">
@@ -782,7 +1148,7 @@
                 </div>
 
                 <!-- Infrastructure as Code -->
-                <div class="bg-white p-8 rounded-lg shadow-sm card-hover slide-up">
+                <div class="bg-white p-8 rounded-lg shadow-sm card-hover slide-up enhanced-card enhanced-card-modern">
                     <div class="flex items-center mb-6">
                         <div class="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mr-4">
                             <i class="fas fa-code text-red-600 text-xl"></i>
@@ -821,7 +1187,7 @@
                 </div>
 
                 <!-- Security & Compliance -->
-                <div class="bg-white p-8 rounded-lg shadow-sm card-hover slide-up">
+                <div class="bg-white p-8 rounded-lg shadow-sm card-hover slide-up enhanced-card enhanced-card-modern">
                     <div class="flex items-center mb-6">
                         <div class="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mr-4">
                             <i class="fas fa-shield-alt text-red-600 text-xl"></i>
@@ -860,7 +1226,7 @@
                 </div>
 
                 <!-- Monitoring & Observability -->
-                <div class="bg-white p-8 rounded-lg shadow-sm card-hover slide-up">
+                <div class="bg-white p-8 rounded-lg shadow-sm card-hover slide-up enhanced-card enhanced-card-modern">
                     <div class="flex items-center mb-6">
                         <div class="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mr-4">
                             <i class="fas fa-chart-line text-red-600 text-xl"></i>
@@ -1102,7 +1468,7 @@
             </div>
             
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="bg-white p-8 rounded-lg shadow-sm project-card slide-up enhanced-card hover-lift">
+                <div class="bg-white p-8 rounded-lg shadow-sm project-card slide-up enhanced-card enhanced-card-modern hover-lift">
                     <div class="flex items-center justify-between mb-4">
                         <h3 class="text-xl font-bold text-gray-900">AWS Landing Zone Solution</h3>
                         <i class="fas fa-external-link-alt text-red-600"></i>
@@ -1127,7 +1493,7 @@
                     </div>
                 </div>
 
-                <div class="bg-white p-8 rounded-lg shadow-sm project-card slide-up">
+                <div class="bg-white p-8 rounded-lg shadow-sm project-card slide-up enhanced-card enhanced-card-modern">
                     <div class="flex items-center justify-between mb-4">
                         <h3 class="text-xl font-bold text-gray-900">Enterprise CI/CD Pipeline</h3>
                         <i class="fas fa-external-link-alt text-red-600"></i>
@@ -1152,7 +1518,7 @@
                     </div>
                 </div>
 
-                <div class="bg-white p-8 rounded-lg shadow-sm project-card slide-up">
+                <div class="bg-white p-8 rounded-lg shadow-sm project-card slide-up enhanced-card enhanced-card-modern">
                     <div class="flex items-center justify-between mb-4">
                         <h3 class="text-xl font-bold text-gray-900">Healthcare Security Platform</h3>
                         <i class="fas fa-external-link-alt text-red-600"></i>
@@ -1177,7 +1543,7 @@
                     </div>
                 </div>
 
-                <div class="bg-white p-8 rounded-lg shadow-sm project-card slide-up">
+                <div class="bg-white p-8 rounded-lg shadow-sm project-card slide-up enhanced-card enhanced-card-modern">
                     <div class="flex items-center justify-between mb-4">
                         <h3 class="text-xl font-bold text-gray-900">Manufacturing DevOps Platform</h3>
                         <i class="fas fa-external-link-alt text-red-600"></i>
@@ -1202,7 +1568,7 @@
                     </div>
                 </div>
 
-                <div class="bg-white p-8 rounded-lg shadow-sm project-card slide-up">
+                <div class="bg-white p-8 rounded-lg shadow-sm project-card slide-up enhanced-card enhanced-card-modern">
                     <div class="flex items-center justify-between mb-4">
                         <h3 class="text-xl font-bold text-gray-900">Education Technology Platform</h3>
                         <i class="fas fa-external-link-alt text-red-600"></i>
@@ -1458,6 +1824,11 @@
         <i class="fas fa-phone text-xl"></i>
     </a>
 
+    <!-- Scroll Progress Indicator -->
+    <div class="fixed top-0 left-0 w-full h-1 bg-gray-200 z-50">
+        <div id="scroll-progress" class="h-full bg-gradient-to-r from-red-500 to-red-600 transition-all duration-300" style="width: 0%"></div>
+    </div>
+
     <!-- Scroll to Top Button -->
     <button id="scroll-to-top" onclick="scrollToTop()" class="fixed bottom-8 right-8 bg-red-600 text-white p-3 rounded-full shadow-lg hover:bg-red-700 transition-all duration-300 opacity-0 invisible hover:scale-110 z-40">
         <i class="fas fa-arrow-up text-xl"></i>
@@ -1573,6 +1944,48 @@
             });
         }
 
+        // Theme Toggle Function
+        function toggleTheme() {
+            const body = document.body;
+            const themeToggle = document.getElementById('theme-toggle');
+            const currentTheme = body.getAttribute('data-theme');
+            
+            if (currentTheme === 'light') {
+                body.setAttribute('data-theme', 'dark');
+                themeToggle.checked = true;
+                localStorage.setItem('theme', 'dark');
+            } else {
+                body.setAttribute('data-theme', 'light');
+                themeToggle.checked = false;
+                localStorage.setItem('theme', 'light');
+            }
+        }
+
+        // Initialize Theme
+        function initTheme() {
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            const body = document.body;
+            const themeToggle = document.getElementById('theme-toggle');
+            
+            body.setAttribute('data-theme', savedTheme);
+            if (savedTheme === 'dark') {
+                themeToggle.checked = true;
+            } else {
+                themeToggle.checked = false;
+            }
+        }
+
+        // Scroll Progress Indicator
+        function updateScrollProgress() {
+            const scrollProgress = document.getElementById('scroll-progress');
+            if (scrollProgress) {
+                const scrollTop = window.pageYOffset;
+                const docHeight = document.body.scrollHeight - window.innerHeight;
+                const scrollPercent = (scrollTop / docHeight) * 100;
+                scrollProgress.style.width = scrollPercent + '%';
+            }
+        }
+
         // Reveal Phone Number
         function revealPhoneNumber(element) {
             const phoneNumber = element.getAttribute('data-phone');
@@ -1664,6 +2077,9 @@
                     callButton.classList.remove('opacity-100', 'visible');
                 }
             }
+            
+            // Update scroll progress
+            updateScrollProgress();
         });
 
         // Initialize everything when DOM is loaded
@@ -1681,6 +2097,20 @@
             
             // Initialize floating shapes animation
             initFloatingShapes();
+            
+            // Initialize theme
+            initTheme();
+            
+            // Hide loading skeleton after a short delay
+            setTimeout(() => {
+                const loadingSkeleton = document.getElementById('loading-skeleton');
+                if (loadingSkeleton) {
+                    loadingSkeleton.style.opacity = '0';
+                    setTimeout(() => {
+                        loadingSkeleton.style.display = 'none';
+                    }, 300);
+                }
+            }, 1000);
             
             // Use requestIdleCallback for non-critical animations
             if ('requestIdleCallback' in window) {
