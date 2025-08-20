@@ -364,9 +364,127 @@
                 display: block;
             }
         }
+
+        /* Enhanced Background Elements */
+        .floating-shapes {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .floating-shape {
+            position: absolute;
+            opacity: 0.1;
+            animation: float-shape 20s infinite linear;
+        }
+
+        .floating-shape:nth-child(1) {
+            top: 10%;
+            left: 10%;
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(45deg, #dc2626, #ef4444);
+            border-radius: 50%;
+            animation-delay: 0s;
+        }
+
+        .floating-shape:nth-child(2) {
+            top: 60%;
+            right: 15%;
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(45deg, #dc2626, #f87171);
+            border-radius: 20px;
+            animation-delay: -5s;
+        }
+
+        .floating-shape:nth-child(3) {
+            bottom: 20%;
+            left: 20%;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(45deg, #ef4444, #dc2626);
+            border-radius: 50%;
+            animation-delay: -10s;
+        }
+
+        @keyframes float-shape {
+            0% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+            100% { transform: translateY(0px) rotate(360deg); }
+        }
+
+        /* Enhanced Typography */
+        .hero-title {
+            background: linear-gradient(135deg, #1f2937, #374151);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .section-title {
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, #dc2626, #ef4444);
+            border-radius: 2px;
+        }
+
+        /* Enhanced Cards */
+        .enhanced-card-modern {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(220, 38, 38, 0.1);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .enhanced-card-modern:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 25px 50px rgba(220, 38, 38, 0.15);
+            border-color: rgba(220, 38, 38, 0.3);
+        }
+
+        /* Improved Progress Bars */
+        .progress-bar-enhanced {
+            background: linear-gradient(90deg, #dc2626, #ef4444, #f87171);
+            background-size: 200% 100%;
+            animation: progress-shimmer 2s ease-in-out, progress-fill 2s ease-in-out;
+        }
+
+        @keyframes progress-shimmer {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
+        }
+
+        @keyframes progress-fill {
+            from { width: 0%; }
+            to { width: var(--progress-width); }
+        }
     </style>
 </head>
 <body class="bg-white text-gray-900">
+    <!-- Floating Background Shapes -->
+    <div class="floating-shapes">
+        <div class="floating-shape"></div>
+        <div class="floating-shape"></div>
+        <div class="floating-shape"></div>
+    </div>
+
     <!-- Navigation -->
     <nav class="fixed top-0 w-full bg-white/95 backdrop-blur-sm z-50 border-b border-gray-200 shadow-sm enhanced-card">
         <div class="max-w-7xl mx-auto px-4 py-4">
@@ -482,8 +600,7 @@
     <section id="about" class="py-20 px-4">
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold mb-4 text-gray-900">About Me</h2>
-                <div class="w-20 h-1 bg-red-600 mx-auto"></div>
+                <h2 class="text-4xl font-bold mb-4 text-gray-900 section-title">About Me</h2>
             </div>
             
             <div class="grid lg:grid-cols-2 gap-12 items-center">
@@ -551,13 +668,12 @@
     <section id="skills" class="py-20 px-4 bg-gray-50">
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold mb-4 text-gray-900">Technical Skills</h2>
-                <div class="w-20 h-1 bg-red-600 mx-auto"></div>
+                <h2 class="text-4xl font-bold mb-4 text-gray-900 section-title">Technical Skills</h2>
             </div>
             
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mobile-grid">
                 <!-- Cloud Platforms -->
-                <div class="bg-white p-8 rounded-lg shadow-sm card-hover slide-up enhanced-card">
+                <div class="bg-white p-8 rounded-lg shadow-sm card-hover slide-up enhanced-card enhanced-card-modern">
                     <div class="flex items-center mb-6">
                         <div class="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mr-4">
                             <i class="fas fa-cloud text-red-600 text-xl"></i>
@@ -571,7 +687,7 @@
                                 <span class="text-red-600 font-semibold">95%</span>
                             </div>
                             <div class="w-full bg-gray-200 rounded-full h-2">
-                                <div class="progress-bar h-2 rounded-full" style="width: 95%"></div>
+                                <div class="progress-bar progress-bar-enhanced h-2 rounded-full" style="--progress-width: 95%; width: 95%"></div>
                             </div>
                         </div>
                         <div>
@@ -588,7 +704,7 @@
                 </div>
 
                 <!-- Containers & Orchestration -->
-                <div class="bg-white p-8 rounded-lg shadow-sm card-hover slide-up">
+                <div class="bg-white p-8 rounded-lg shadow-sm card-hover slide-up enhanced-card-modern">
                     <div class="flex items-center mb-6">
                         <div class="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mr-4">
                             <i class="fab fa-docker text-red-600 text-xl"></i>
@@ -789,8 +905,7 @@
     <section id="experience" class="py-20 px-4">
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold mb-4 text-gray-900">Professional Experience</h2>
-                <div class="w-20 h-1 bg-red-600 mx-auto"></div>
+                <h2 class="text-4xl font-bold mb-4 text-gray-900 section-title">Professional Experience</h2>
             </div>
             
             <div class="relative">
@@ -983,8 +1098,7 @@
     <section id="projects" class="py-20 px-4 bg-gray-50">
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold mb-4 text-gray-900">Featured Projects</h2>
-                <div class="w-20 h-1 bg-red-600 mx-auto"></div>
+                <h2 class="text-4xl font-bold mb-4 text-gray-900 section-title">Featured Projects</h2>
             </div>
             
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -1120,8 +1234,7 @@
     <section id="certifications" class="py-20 px-4">
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold mb-4 text-gray-900">Certifications</h2>
-                <div class="w-20 h-1 bg-red-600 mx-auto"></div>
+                <h2 class="text-4xl font-bold mb-4 text-gray-900 section-title">Certifications</h2>
             </div>
             
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -1246,8 +1359,7 @@
     <section id="contact" class="py-20 px-4 bg-gray-50">
         <div class="max-w-6xl mx-auto">
             <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold mb-4 text-gray-900">Get In Touch</h2>
-                <div class="w-20 h-1 bg-red-600 mx-auto mb-6"></div>
+                <h2 class="text-4xl font-bold mb-4 text-gray-900 section-title">Get In Touch</h2>
                 <p class="text-gray-600 text-lg">Ready to discuss your next DevOps challenge? Let's connect!</p>
             </div>
             
@@ -1452,6 +1564,15 @@
             document.body.removeChild(link);
         }
         
+        // Initialize Floating Shapes
+        function initFloatingShapes() {
+            const shapes = document.querySelectorAll('.floating-shape');
+            shapes.forEach((shape, index) => {
+                shape.style.animationDelay = `${index * 2}s`;
+                shape.style.animationDuration = `${20 + index * 5}s`;
+            });
+        }
+
         // Reveal Phone Number
         function revealPhoneNumber(element) {
             const phoneNumber = element.getAttribute('data-phone');
@@ -1557,6 +1678,9 @@
             } else {
                 console.log('Profile image not found');
             }
+            
+            // Initialize floating shapes animation
+            initFloatingShapes();
             
             // Use requestIdleCallback for non-critical animations
             if ('requestIdleCallback' in window) {
