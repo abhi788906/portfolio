@@ -66,6 +66,18 @@
             transform: translateY(30px);
         }
 
+        /* Ensure profile image is visible */
+        .profile-image-container {
+            opacity: 1 !important;
+            visibility: visible !important;
+        }
+
+        .profile-image-container img {
+            opacity: 1 !important;
+            visibility: visible !important;
+            display: block !important;
+        }
+
         @keyframes fadeIn {
             to {
                 opacity: 1;
@@ -410,16 +422,15 @@
     <section class="pt-24 pb-20 px-4 bg-gradient-to-br from-gray-50 to-red-50">
         <div class="max-w-7xl mx-auto text-center">
             <!-- Profile Image -->
-            <div class="mb-8 fade-in floating-animation">
+            <div class="mb-8 fade-in floating-animation profile-image-container">
                 <div class="w-32 h-32 mx-auto mb-6 relative">
                     <div class="w-full h-full rounded-full bg-gradient-to-r from-red-500 to-red-600 p-1 pulse-glow">
                         <div class="w-full h-full rounded-full bg-white flex items-center justify-center overflow-hidden">
-                            <img src="assets/images/profile/PXL_20221201_174040178.jpg" alt="Abhishek Gupta - DevOps Engineer" class="w-28 h-28 rounded-full object-cover" loading="eager" fetchpriority="high">
+                            <img src="assets/images/profile/PXL_20221201_174040178.jpg" alt="Abhishek Gupta - DevOps Engineer" class="w-28 h-28 rounded-full object-cover" loading="eager" fetchpriority="high" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'; console.log('Image failed to load:', this.src);" onload="console.log('Image loaded successfully:', this.src); this.nextElementSibling.style.display='none';">
+                            <div class="w-28 h-28 rounded-full bg-red-100 flex items-center justify-center text-red-600 font-bold text-2xl" style="display: none;">AG</div>
                         </div>
                     </div>
-                    <div class="absolute -bottom-1 -right-1 w-8 h-8 bg-green-500 rounded-full flex items-center justify-center bounce-in">
-                        <i class="fas fa-check text-white text-sm"></i>
-                    </div>
+
                 </div>
             </div>
 
@@ -496,7 +507,7 @@
                         </div>
                         <div class="flex items-center">
                             <i class="fas fa-phone text-red-600 mr-3"></i>
-                            <span class="text-gray-700">Available for consultation</span>
+                            <span class="text-gray-700 cursor-pointer hover:text-red-600 transition-colors" onclick="revealPhoneNumber(this)" data-phone="+91 7889066943">Let's have a quick chat</span>
                         </div>
                     </div>
                 </div>
@@ -1330,6 +1341,11 @@
         </div>
     </footer>
 
+    <!-- Call Button -->
+    <a href="tel:+917889066943" id="call-button" class="fixed bottom-8 left-8 bg-red-600 text-white p-3 rounded-full shadow-lg hover:bg-red-700 transition-all duration-300 opacity-0 invisible hover:scale-110 z-40">
+        <i class="fas fa-phone text-xl"></i>
+    </a>
+
     <!-- Scroll to Top Button -->
     <button id="scroll-to-top" onclick="scrollToTop()" class="fixed bottom-8 right-8 bg-red-600 text-white p-3 rounded-full shadow-lg hover:bg-red-700 transition-all duration-300 opacity-0 invisible hover:scale-110 z-40">
         <i class="fas fa-arrow-up text-xl"></i>
@@ -1436,6 +1452,15 @@
             document.body.removeChild(link);
         }
         
+        // Reveal Phone Number
+        function revealPhoneNumber(element) {
+            const phoneNumber = element.getAttribute('data-phone');
+            element.textContent = phoneNumber;
+            element.onclick = null; // Remove click handler after revealing
+            element.classList.remove('cursor-pointer', 'hover:text-red-600');
+            element.classList.add('text-red-600', 'font-semibold');
+        }
+
         // Send Message
         function sendMessage(event) {
             event.preventDefault();
@@ -1494,9 +1519,11 @@
             });
         }
 
-        // Show/Hide scroll to top button
+        // Show/Hide scroll to top button and call button
         window.addEventListener('scroll', function() {
             const scrollButton = document.getElementById('scroll-to-top');
+            const callButton = document.getElementById('call-button');
+            
             if (scrollButton) {
                 if (window.pageYOffset > 300) {
                     scrollButton.classList.remove('opacity-0', 'invisible');
@@ -1506,10 +1533,31 @@
                     scrollButton.classList.remove('opacity-100', 'visible');
                 }
             }
+            
+            if (callButton) {
+                if (window.pageYOffset > 300) {
+                    callButton.classList.remove('opacity-0', 'invisible');
+                    callButton.classList.add('opacity-100', 'visible');
+                } else {
+                    callButton.classList.add('opacity-0', 'invisible');
+                    callButton.classList.remove('opacity-100', 'visible');
+                }
+            }
         });
 
         // Initialize everything when DOM is loaded
         document.addEventListener('DOMContentLoaded', function() {
+            // Ensure profile image is visible
+            const profileImg = document.querySelector('.profile-image-container img');
+            if (profileImg) {
+                console.log('Profile image found:', profileImg.src);
+                profileImg.style.opacity = '1';
+                profileImg.style.visibility = 'visible';
+                profileImg.style.display = 'block';
+            } else {
+                console.log('Profile image not found');
+            }
+            
             // Use requestIdleCallback for non-critical animations
             if ('requestIdleCallback' in window) {
                 requestIdleCallback(() => {
