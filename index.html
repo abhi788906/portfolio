@@ -184,49 +184,223 @@
             border: 3px solid white;
         }
 
+        /* Advanced Effects & Animations */
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #dc2626, #ef4444, #f87171);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .floating-animation {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .pulse-glow {
+            animation: pulseGlow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes pulseGlow {
+            from { box-shadow: 0 0 20px rgba(220, 38, 38, 0.3); }
+            to { box-shadow: 0 0 30px rgba(220, 38, 38, 0.6); }
+        }
+
+        .slide-in-left {
+            animation: slideInLeft 0.8s ease-out forwards;
+        }
+
+        .slide-in-right {
+            animation: slideInRight 0.8s ease-out forwards;
+        }
+
+        @keyframes slideInLeft {
+            from { transform: translateX(-100px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+
+        @keyframes slideInRight {
+            from { transform: translateX(100px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+
+        .bounce-in {
+            animation: bounceIn 0.8s ease-out forwards;
+        }
+
+        @keyframes bounceIn {
+            0% { transform: scale(0.3); opacity: 0; }
+            50% { transform: scale(1.05); }
+            70% { transform: scale(0.9); }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        /* Enhanced Card Effects */
+        .enhanced-card {
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .enhanced-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .enhanced-card:hover::before {
+            left: 100%;
+        }
+
+        .enhanced-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 25px 50px rgba(220, 38, 38, 0.15);
+        }
+
         /* Mobile Responsive */
         @media (max-width: 768px) {
             .hero-title {
                 font-size: 2.5rem;
+            }
+            
+            .mobile-nav {
+                transform: translateX(-100%);
+                transition: transform 0.3s ease-in-out;
+            }
+            
+            .mobile-nav.open {
+                transform: translateX(0);
+            }
+            
+            .mobile-card {
+                margin: 0.5rem;
+                padding: 1rem;
+            }
+            
+            .mobile-text {
+                font-size: 0.875rem;
+                line-height: 1.5;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .mobile-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            
+            .mobile-padding {
+                padding: 1rem;
+            }
+        }
+
+        /* Smooth Scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Loading States */
+        .loading-skeleton {
+            background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+            background-size: 200% 100%;
+            animation: loading 1.5s infinite;
+        }
+
+        @keyframes loading {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
+        }
+
+        /* Hover Effects */
+        .hover-lift {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .hover-lift:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Focus States for Accessibility */
+        button:focus, a:focus {
+            outline: 2px solid #dc2626;
+            outline-offset: 2px;
+        }
+
+        /* Dark Mode Support */
+        @media (prefers-color-scheme: dark) {
+            .dark-mode-toggle {
+                display: block;
             }
         }
     </style>
 </head>
 <body class="bg-white text-gray-900">
     <!-- Navigation -->
-    <nav class="fixed top-0 w-full bg-white/95 backdrop-blur-sm z-50 border-b border-gray-200 shadow-sm">
+    <nav class="fixed top-0 w-full bg-white/95 backdrop-blur-sm z-50 border-b border-gray-200 shadow-sm enhanced-card">
         <div class="max-w-7xl mx-auto px-4 py-4">
             <div class="flex justify-between items-center">
                 <div class="flex items-center space-x-3">
-                    <div class="status-online"></div>
-                    <div class="font-mono font-semibold text-gray-900">abhishek@devops:~$</div>
+                    <div class="status-online pulse-glow"></div>
+                    <div class="font-mono font-semibold text-gray-900 gradient-text">abhishek@devops:~$</div>
                 </div>
                 
                 <!-- Desktop Navigation -->
                 <div class="hidden lg:flex space-x-8 font-medium">
-                    <button onclick="scrollToSection('about')" class="text-gray-700 hover:text-red-600 transition-colors">About</button>
-                    <button onclick="scrollToSection('skills')" class="text-gray-700 hover:text-red-600 transition-colors">Skills</button>
-                    <button onclick="scrollToSection('experience')" class="text-gray-700 hover:text-red-600 transition-colors">Experience</button>
-                    <button onclick="scrollToSection('projects')" class="text-gray-700 hover:text-red-600 transition-colors">Projects</button>
-                    <button onclick="scrollToSection('certifications')" class="text-gray-700 hover:text-red-600 transition-colors">Certifications</button>
-                    <button onclick="scrollToSection('contact')" class="text-gray-700 hover:text-red-600 transition-colors">Contact</button>
+                    <button onclick="scrollToSection('about')" class="nav-link text-gray-700 hover:text-red-600 transition-all duration-300 hover:scale-105">About</button>
+                    <button onclick="scrollToSection('skills')" class="nav-link text-gray-700 hover:text-red-600 transition-all duration-300 hover:scale-105">Skills</button>
+                    <button onclick="scrollToSection('experience')" class="nav-link text-gray-700 hover:text-red-600 transition-all duration-300 hover:scale-105">Experience</button>
+                    <button onclick="scrollToSection('projects')" class="nav-link text-gray-700 hover:text-red-600 transition-all duration-300 hover:scale-105">Projects</button>
+                    <button onclick="scrollToSection('certifications')" class="nav-link text-gray-700 hover:text-red-600 transition-all duration-300 hover:scale-105">Certifications</button>
+                    <button onclick="scrollToSection('contact')" class="nav-link text-gray-700 hover:text-red-600 transition-all duration-300 hover:scale-105">Contact</button>
                 </div>
                 
                 <!-- Mobile Menu Button -->
-                <button onclick="toggleMobileMenu()" class="lg:hidden p-2 text-gray-700 hover:text-red-600">
+                <button onclick="toggleMobileMenu()" class="lg:hidden p-2 text-gray-700 hover:text-red-600 transition-all duration-300 hover:scale-110">
                     <i class="fas fa-bars text-xl"></i>
                 </button>
             </div>
             
-            <!-- Mobile Menu -->
-            <div id="mobile-menu" class="lg:hidden hidden mt-4 pb-4 border-t border-gray-200">
-                <div class="flex flex-col space-y-3 pt-4">
-                    <button onclick="scrollToSection('about'); toggleMobileMenu();" class="text-left text-gray-700 hover:text-red-600 transition-colors">About</button>
-                    <button onclick="scrollToSection('skills'); toggleMobileMenu();" class="text-left text-gray-700 hover:text-red-600 transition-colors">Skills</button>
-                    <button onclick="scrollToSection('experience'); toggleMobileMenu();" class="text-left text-gray-700 hover:text-red-600 transition-colors">Experience</button>
-                    <button onclick="scrollToSection('projects'); toggleMobileMenu();" class="text-left text-gray-700 hover:text-red-600 transition-colors">Projects</button>
-                    <button onclick="scrollToSection('certifications'); toggleMobileMenu();" class="text-left text-gray-700 hover:text-red-600 transition-colors">Certifications</button>
-                    <button onclick="scrollToSection('contact'); toggleMobileMenu();" class="text-left text-gray-700 hover:text-red-600 transition-colors">Contact</button>
+            <!-- Enhanced Mobile Menu -->
+            <div id="mobile-menu" class="lg:hidden mobile-nav hidden mt-4 pb-4 border-t border-gray-200 bg-white/95 backdrop-blur-sm rounded-lg shadow-lg">
+                <div class="flex flex-col space-y-3 pt-4 px-4">
+                    <button onclick="scrollToSection('about'); toggleMobileMenu();" class="mobile-nav-item text-left text-gray-700 hover:text-red-600 transition-all duration-300 py-2 px-3 rounded-lg hover:bg-red-50">
+                        <i class="fas fa-user mr-2"></i>About
+                    </button>
+                    <button onclick="scrollToSection('skills'); toggleMobileMenu();" class="mobile-nav-item text-left text-gray-700 hover:text-red-600 transition-all duration-300 py-2 px-3 rounded-lg hover:bg-red-50">
+                        <i class="fas fa-cogs mr-2"></i>Skills
+                    </button>
+                    <button onclick="scrollToSection('experience'); toggleMobileMenu();" class="mobile-nav-item text-left text-gray-700 hover:text-red-600 transition-all duration-300 py-2 px-3 rounded-lg hover:bg-red-50">
+                        <i class="fas fa-briefcase mr-2"></i>Experience
+                    </button>
+                    <button onclick="scrollToSection('projects'); toggleMobileMenu();" class="mobile-nav-item text-left text-gray-700 hover:text-red-600 transition-all duration-300 py-2 px-3 rounded-lg hover:bg-red-50">
+                        <i class="fas fa-project-diagram mr-2"></i>Projects
+                    </button>
+                    <button onclick="scrollToSection('certifications'); toggleMobileMenu();" class="mobile-nav-item text-left text-gray-700 hover:text-red-600 transition-all duration-300 py-2 px-3 rounded-lg hover:bg-red-50">
+                        <i class="fas fa-certificate mr-2"></i>Certifications
+                    </button>
+                    <button onclick="scrollToSection('contact'); toggleMobileMenu();" class="mobile-nav-item text-left text-gray-700 hover:text-red-600 transition-all duration-300 py-2 px-3 rounded-lg hover:bg-red-50">
+                        <i class="fas fa-envelope mr-2"></i>Contact
+                    </button>
                 </div>
             </div>
         </div>
@@ -236,14 +410,14 @@
     <section class="pt-24 pb-20 px-4 bg-gradient-to-br from-gray-50 to-red-50">
         <div class="max-w-7xl mx-auto text-center">
             <!-- Profile Image -->
-            <div class="mb-8 fade-in">
+            <div class="mb-8 fade-in floating-animation">
                 <div class="w-32 h-32 mx-auto mb-6 relative">
-                    <div class="w-full h-full rounded-full bg-gradient-to-r from-red-500 to-red-600 p-1">
+                    <div class="w-full h-full rounded-full bg-gradient-to-r from-red-500 to-red-600 p-1 pulse-glow">
                         <div class="w-full h-full rounded-full bg-white flex items-center justify-center overflow-hidden">
-                            <img src="PXL_20221201_174040178.jpg" alt="Abhishek Gupta - DevOps Engineer" class="w-28 h-28 rounded-full object-cover" loading="eager" fetchpriority="high">
+                            <img src="assets/images/profile/PXL_20221201_174040178.jpg" alt="Abhishek Gupta - DevOps Engineer" class="w-28 h-28 rounded-full object-cover" loading="eager" fetchpriority="high">
                         </div>
                     </div>
-                    <div class="absolute -bottom-1 -right-1 w-8 h-8 bg-green-500 rounded-full flex items-center justify-center">
+                    <div class="absolute -bottom-1 -right-1 w-8 h-8 bg-green-500 rounded-full flex items-center justify-center bounce-in">
                         <i class="fas fa-check text-white text-sm"></i>
                     </div>
                 </div>
@@ -370,9 +544,9 @@
                 <div class="w-20 h-1 bg-red-600 mx-auto"></div>
             </div>
             
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mobile-grid">
                 <!-- Cloud Platforms -->
-                <div class="bg-white p-8 rounded-lg shadow-sm card-hover slide-up">
+                <div class="bg-white p-8 rounded-lg shadow-sm card-hover slide-up enhanced-card">
                     <div class="flex items-center mb-6">
                         <div class="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mr-4">
                             <i class="fas fa-cloud text-red-600 text-xl"></i>
@@ -803,7 +977,7 @@
             </div>
             
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="bg-white p-8 rounded-lg shadow-sm project-card slide-up">
+                <div class="bg-white p-8 rounded-lg shadow-sm project-card slide-up enhanced-card hover-lift">
                     <div class="flex items-center justify-between mb-4">
                         <h3 class="text-xl font-bold text-gray-900">AWS Landing Zone Solution</h3>
                         <i class="fas fa-external-link-alt text-red-600"></i>
@@ -943,7 +1117,7 @@
                 <div class="bg-white p-8 rounded-lg shadow-sm card-hover slide-up">
                     <div class="flex items-center justify-between mb-4">
                         <div class="w-16 h-16 bg-white rounded-lg flex items-center justify-center overflow-hidden">
-                            <img src="cka-certified-kubernetes-administrator.png" alt="Certified Kubernetes Administrator" class="w-full h-full object-contain" loading="lazy">
+                            <img src="assets/images/certificates/cka-certified-kubernetes-administrator.png" alt="Certified Kubernetes Administrator" class="w-full h-full object-contain" loading="lazy">
                         </div>
                         <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-xs font-semibold">ACTIVE</span>
                     </div>
@@ -961,7 +1135,7 @@
                 <div class="bg-white p-8 rounded-lg shadow-sm card-hover slide-up">
                     <div class="flex items-center justify-between mb-4">
                         <div class="w-16 h-16 bg-white rounded-lg flex items-center justify-center overflow-hidden">
-                            <img src="aws-certified-devops-engineer-professional.png" alt="AWS DevOps Professional" class="w-full h-full object-contain" loading="lazy">
+                            <img src="assets/images/certificates/aws-certified-devops-engineer-professional.png" alt="AWS DevOps Professional" class="w-full h-full object-contain" loading="lazy">
                         </div>
                         <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-xs font-semibold">ACTIVE</span>
                     </div>
@@ -979,7 +1153,7 @@
                 <div class="bg-white p-8 rounded-lg shadow-sm card-hover slide-up">
                     <div class="flex items-center justify-between mb-4">
                         <div class="w-16 h-16 bg-white rounded-lg flex items-center justify-center overflow-hidden">
-                            <img src="aws-certified-security-specialty.png" alt="AWS Security Specialty" class="w-full h-full object-contain" loading="lazy">
+                            <img src="assets/images/certificates/aws-certified-security-specialty.png" alt="AWS Security Specialty" class="w-full h-full object-contain" loading="lazy">
                         </div>
                         <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-xs font-semibold">ACTIVE</span>
                     </div>
@@ -997,7 +1171,7 @@
                 <div class="bg-white p-8 rounded-lg shadow-sm card-hover slide-up">
                     <div class="flex items-center justify-between mb-4">
                         <div class="w-16 h-16 bg-white rounded-lg flex items-center justify-center overflow-hidden">
-                            <img src="ckad-certified-kubernetes-application-developer.png" alt="Certified Kubernetes Application Developer" class="w-full h-full object-contain" loading="lazy">
+                            <img src="assets/images/certificates/ckad-certified-kubernetes-application-developer.png" alt="Certified Kubernetes Application Developer" class="w-full h-full object-contain" loading="lazy">
                         </div>
                         <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-xs font-semibold">ACTIVE</span>
                     </div>
@@ -1015,7 +1189,7 @@
                 <div class="bg-white p-8 rounded-lg shadow-sm card-hover slide-up">
                     <div class="flex items-center justify-between mb-4">
                         <div class="w-16 h-16 bg-white rounded-lg flex items-center justify-center overflow-hidden">
-                            <img src="hashicorp-certified-terraform-associate-003.png" alt="HashiCorp Terraform Associate" class="w-full h-full object-contain" loading="lazy">
+                            <img src="assets/images/certificates/hashicorp-certified-terraform-associate-003.png" alt="HashiCorp Terraform Associate" class="w-full h-full object-contain" loading="lazy">
                         </div>
                         <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-xs font-semibold">ACTIVE</span>
                     </div>
@@ -1099,28 +1273,28 @@
                     <div class="grid md:grid-cols-2 gap-6">
                         <div>
                             <label class="block text-gray-700 font-semibold mb-2">Name</label>
-                            <input type="text" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:border-red-500 focus:outline-none focus:ring-2 focus:ring-red-200 transition-all">
+                            <input type="text" id="name" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:border-red-500 focus:outline-none focus:ring-2 focus:ring-red-200 transition-all">
                         </div>
                         <div>
                             <label class="block text-gray-700 font-semibold mb-2">Email</label>
-                            <input type="email" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:border-red-500 focus:outline-none focus:ring-2 focus:ring-red-200 transition-all">
+                            <input type="email" id="email" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:border-red-500 focus:outline-none focus:ring-2 focus:ring-red-200 transition-all">
                         </div>
                     </div>
                     <div>
                         <label class="block text-gray-700 font-semibold mb-2">Subject</label>
-                        <select required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:border-red-500 focus:outline-none focus:ring-2 focus:ring-red-200 transition-all">
+                        <select id="subject" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:border-red-500 focus:outline-none focus:ring-2 focus:ring-red-200 transition-all">
                             <option value="">Select a topic</option>
-                            <option value="infrastructure">Infrastructure Design</option>
-                            <option value="cicd">CI/CD Implementation</option>
-                            <option value="monitoring">Monitoring & Observability</option>
-                            <option value="migration">Cloud Migration</option>
-                            <option value="consultation">DevOps Consultation</option>
-                            <option value="other">Other</option>
+                            <option value="Infrastructure Design">Infrastructure Design</option>
+                            <option value="CI/CD Implementation">CI/CD Implementation</option>
+                            <option value="Monitoring & Observability">Monitoring & Observability</option>
+                            <option value="Cloud Migration">Cloud Migration</option>
+                            <option value="DevOps Consultation">DevOps Consultation</option>
+                            <option value="Other">Other</option>
                         </select>
                     </div>
                     <div>
                         <label class="block text-gray-700 font-semibold mb-2">Message</label>
-                        <textarea rows="6" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:border-red-500 focus:outline-none focus:ring-2 focus:ring-red-200 transition-all resize-none" placeholder="Describe your project or requirements..."></textarea>
+                        <textarea id="message" rows="6" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:border-red-500 focus:outline-none focus:ring-2 focus:ring-red-200 transition-all resize-none" placeholder="Tell me about your project, infrastructure needs, or how I can help you achieve your DevOps goals. Include details about your current setup, challenges, and desired outcomes."></textarea>
                     </div>
                     <div class="text-center">
                         <button type="submit" class="btn-primary px-8 py-3 rounded-lg font-semibold">
@@ -1155,6 +1329,11 @@
             </div>
         </div>
     </footer>
+
+    <!-- Scroll to Top Button -->
+    <button id="scroll-to-top" onclick="scrollToTop()" class="fixed bottom-8 right-8 bg-red-600 text-white p-3 rounded-full shadow-lg hover:bg-red-700 transition-all duration-300 opacity-0 invisible hover:scale-110 z-40">
+        <i class="fas fa-arrow-up text-xl"></i>
+    </button>
 
     <script>
         // Typing Animation
@@ -1195,11 +1374,42 @@
             setTimeout(typeWriter, speed);
         }
         
-        // Mobile Menu Toggle
+        // Enhanced Mobile Menu Toggle
         function toggleMobileMenu() {
             const mobileMenu = document.getElementById('mobile-menu');
             if (mobileMenu) {
                 mobileMenu.classList.toggle('hidden');
+                // Add smooth slide animation
+                if (!mobileMenu.classList.contains('hidden')) {
+                    mobileMenu.classList.add('open');
+                } else {
+                    mobileMenu.classList.remove('open');
+                }
+            }
+        }
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileButton = event.target.closest('button[onclick*="toggleMobileMenu"]');
+            
+            if (mobileMenu && !mobileMenu.contains(event.target) && !mobileButton) {
+                mobileMenu.classList.add('hidden');
+                mobileMenu.classList.remove('open');
+            }
+        });
+
+        // Enhanced scroll with smooth animation
+        function scrollToSection(sectionId) {
+            const section = document.getElementById(sectionId);
+            if (section) {
+                const offset = 80; // Account for fixed header
+                const targetPosition = section.offsetTop - offset;
+                
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
             }
         }
         
@@ -1218,7 +1428,7 @@
         function downloadResume() {
             // Download the actual resume file
             const link = document.createElement('a');
-            link.href = 'Abhishek_Gupta_Resume.pdf';
+            link.href = 'assets/Abhishek_Gupta_Resume.pdf';
             link.download = 'Abhishek_Gupta_Resume.pdf';
             link.target = '_blank';
             document.body.appendChild(link);
@@ -1232,20 +1442,26 @@
             
             // Get form data
             const form = event.target;
-            const formData = new FormData(form);
             const name = form.querySelector('input[type="text"]').value;
             const email = form.querySelector('input[type="email"]').value;
             const subject = form.querySelector('select').value;
             const message = form.querySelector('textarea').value;
             
+            // Validate form fields
+            if (!name || !email || !subject || !message) {
+                alert('Please fill in all fields');
+                return;
+            }
+            
             // Create mailto link with form data
-            const mailtoLink = `mailto:abhi133182@outlook.com?subject=Portfolio Contact: ${encodeURIComponent(subject)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\nSubject: ${subject}\n\nMessage:\n${message}`)}`;
+            // Note: 'from' parameter is not supported in mailto links, but the email client will use the user's default email
+            const mailtoLink = `mailto:abhi133182@outlook.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`)}`;
             
             // Open email client
             window.location.href = mailtoLink;
             
             // Show success message
-            alert('Thank you for your message! Your email client will open with a pre-filled message. Please send the email to complete the contact process.');
+            alert('Thank you for your message! I will get back to you soon.');
         }
         
         // Intersection Observer for animations
@@ -1270,6 +1486,28 @@
             });
         }
         
+        // Scroll to Top functionality
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+
+        // Show/Hide scroll to top button
+        window.addEventListener('scroll', function() {
+            const scrollButton = document.getElementById('scroll-to-top');
+            if (scrollButton) {
+                if (window.pageYOffset > 300) {
+                    scrollButton.classList.remove('opacity-0', 'invisible');
+                    scrollButton.classList.add('opacity-100', 'visible');
+                } else {
+                    scrollButton.classList.add('opacity-0', 'invisible');
+                    scrollButton.classList.remove('opacity-100', 'visible');
+                }
+            }
+        });
+
         // Initialize everything when DOM is loaded
         document.addEventListener('DOMContentLoaded', function() {
             // Use requestIdleCallback for non-critical animations
@@ -1306,6 +1544,14 @@
                     progressObserver.observe(bar);
                 });
             }
+
+            // Add loading states for images
+            const images = document.querySelectorAll('img');
+            images.forEach(img => {
+                img.addEventListener('load', function() {
+                    this.classList.add('loaded');
+                });
+            });
         });
     </script>
 <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9723842bd4e17f37',t:'MTc1NTcwOTk1NC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
