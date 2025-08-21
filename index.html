@@ -858,6 +858,7 @@
                     <button onclick="scrollToSection('skills')" class="nav-link transition-all duration-300 hover:scale-105" style="color: var(--text-secondary);">Skills</button>
                     <button onclick="scrollToSection('experience')" class="nav-link transition-all duration-300 hover:scale-105" style="color: var(--text-secondary);">Experience</button>
                     <button onclick="scrollToSection('projects')" class="nav-link transition-all duration-300 hover:scale-105" style="color: var(--text-secondary);">Projects</button>
+                    <button onclick="scrollToSection('blogs')" class="nav-link transition-all duration-300 hover:scale-105" style="color: var(--text-secondary);">Blogs</button>
                     <button onclick="scrollToSection('certifications')" class="nav-link transition-all duration-300 hover:scale-105" style="color: var(--text-secondary);">Certifications</button>
                     <button onclick="scrollToSection('contact')" class="nav-link transition-all duration-300 hover:scale-105" style="color: var(--text-secondary);">Contact</button>
                 </div>
@@ -882,6 +883,9 @@
                     </button>
                     <button onclick="scrollToSection('projects'); toggleMobileMenu();" class="mobile-nav-item text-left transition-all duration-300 py-2 px-3 rounded-lg hover:bg-red-50" style="color: var(--text-secondary);">
                         <i class="fas fa-project-diagram mr-2"></i>Projects
+                    </button>
+                    <button onclick="scrollToSection('blogs'); toggleMobileMenu();" class="mobile-nav-item text-left transition-all duration-300 py-2 px-3 rounded-lg hover:bg-red-50" style="color: var(--text-secondary);">
+                        <i class="fas fa-book-open mr-2"></i>Blogs
                     </button>
                     <button onclick="scrollToSection('certifications'); toggleMobileMenu();" class="mobile-nav-item text-left transition-all duration-300 py-2 px-3 rounded-lg hover:bg-red-50" style="color: var(--text-secondary);">
                         <i class="fas fa-certificate mr-2"></i>Certifications
@@ -1022,6 +1026,131 @@
                             <div class="flex items-center">
                                 <i class="fas fa-check text-red-600 mr-2"></i>
                                 <span class="text-gray-700 text-sm">Monitoring & Logging</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications" class="py-20 px-4">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4 text-gray-900 section-title">Certifications</h2>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-lg shadow-sm card-hover slide-up">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-16 h-16 bg-white rounded-lg flex items-center justify-center overflow-hidden">
+                            <img src="assets/images/certificates/cka-certified-kubernetes-administrator.png" alt="Certified Kubernetes Administrator" class="w-full h-full object-contain" loading="lazy">
+                        </div>
+                        <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-xs font-semibold">ACTIVE</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Certified Kubernetes Administrator</h3>
+                    <p class="text-gray-600 text-sm mb-4">Cloud Native Computing Foundation</p>
+                    <div class="flex justify-between text-sm text-gray-500 mb-4">
+                        <span>Oct 2023</span>
+                        <span>Valid: 3 years</span>
+                    </div>
+                    <a href="https://www.credly.com/badges/b7d4064e-05f6-41ae-b915-6d61cbd826f5/public_url" target="_blank" rel="noopener noreferrer" class="text-red-600 hover:text-red-700 font-semibold text-sm inline-flex items-center">
+                        Verify Certificate <i class="fas fa-external-link-alt ml-1"></i>
+                    </a>
+                </div>
+
+                <div class="bg-white p-8 rounded-lg shadow-sm card-hover slide-up">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-16 h-16 bg-white rounded-lg flex items-center justify-center overflow-hidden">
+                            <img src="assets/images/certificates/aws-certified-devops-engineer-professional.png" alt="AWS DevOps Professional" class="w-full h-full object-contain" loading="lazy">
+                        </div>
+                        <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-xs font-semibold">ACTIVE</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">AWS DevOps Professional</h3>
+                    <p class="text-gray-600 text-sm mb-4">Amazon Web Services</p>
+                    <div class="flex justify-between text-sm text-gray-500 mb-4">
+                        <span>May 2025</span>
+                        <span>Valid: 3 years</span>
+                    </div>
+                    <a href="https://www.credly.com/badges/c932a0d1-649a-40a8-b6c5-211af03e2e0a" target="_blank" rel="noopener noreferrer" class="text-red-600 hover:text-red-700 font-semibold text-sm inline-flex items-center">
+                        Verify Certificate <i class="fas fa-external-link-alt ml-1"></i>
+                    </a>
+                </div>
+
+                <div class="bg-white p-8 rounded-lg shadow-sm card-hover slide-up">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-16 h-16 bg-white rounded-lg flex items-center justify-center overflow-hidden">
+                            <img src="assets/images/certificates/aws-certified-security-specialty.png" alt="AWS Security Specialty" class="w-full h-full object-contain" loading="lazy">
+                        </div>
+                        <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-xs font-semibold">ACTIVE</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">AWS Security Specialty</h3>
+                    <p class="text-gray-600 text-sm mb-4">Amazon Web Services</p>
+                    <div class="flex justify-between text-sm text-gray-500 mb-4">
+                        <span>Jan 2022</span>
+                        <span>Valid: 3 years</span>
+                    </div>
+                    <a href="https://www.credly.com/badges/3c066983-6cb0-48c1-b3fd-9ef01aa1e93e/public_url" target="_blank" rel="noopener noreferrer" class="text-red-600 hover:text-red-700 font-semibold text-sm inline-flex items-center">
+                        Verify Certificate <i class="fas fa-external-link-alt ml-1"></i>
+                    </a>
+                </div>
+
+                <div class="bg-white p-8 rounded-lg shadow-sm card-hover slide-up">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-16 h-16 bg-white rounded-lg flex items-center justify-center overflow-hidden">
+                            <img src="assets/images/certificates/ckad-certified-kubernetes-application-developer.png" alt="Certified Kubernetes Application Developer" class="w-full h-full object-contain" loading="lazy">
+                        </div>
+                        <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-xs font-semibold">ACTIVE</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Certified Kubernetes Application Developer</h3>
+                    <p class="text-gray-600 text-sm mb-4">Cloud Native Computing Foundation</p>
+                    <div class="flex justify-between text-sm text-gray-500 mb-4">
+                        <span>Jul 2025</span>
+                        <span>Valid: 3 years</span>
+                    </div>
+                    <a href="https://www.credly.com/badges/c51e3db9-5aec-4818-aea5-5dca98dc7b94/public_url" target="_blank" rel="noopener noreferrer" class="text-red-600 hover:text-red-700 font-semibold text-sm inline-flex items-center">
+                        Verify Certificate <i class="fas fa-external-link-alt ml-1"></i>
+                    </a>
+                </div>
+
+                <div class="bg-white p-8 rounded-lg shadow-sm card-hover slide-up">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-16 h-16 bg-white rounded-lg flex items-center justify-center overflow-hidden">
+                            <img src="assets/images/certificates/hashicorp-certified-terraform-associate-003.png" alt="HashiCorp Terraform Associate" class="w-full h-full object-contain" loading="lazy">
+                        </div>
+                        <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-xs font-semibold">ACTIVE</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">HashiCorp Terraform Associate</h3>
+                    <p class="text-gray-600 text-sm mb-4">HashiCorp</p>
+                    <div class="flex justify-between text-sm text-gray-500 mb-4">
+                        <span>Dec 2024</span>
+                        <span>Valid: 2 years</span>
+                    </div>
+                    <a href="https://www.credly.com/badges/7724881f-04d8-442e-9fef-cc2d18e4d552/public_url" target="_blank" rel="noopener noreferrer" class="text-red-600 hover:text-red-700 font-semibold text-sm inline-flex items-center">
+                        Verify Certificate <i class="fas fa-external-link-alt ml-1"></i>
+                    </a>
+                </div>
+
+                <!-- Summary Card -->
+                <div class="bg-gradient-to-br from-red-50 to-red-100 p-8 rounded-lg shadow-sm slide-up">
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-certificate text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-4">Certification Summary</h3>
+                        <div class="space-y-3">
+                            <div class="flex justify-between">
+                                <span class="text-gray-600">Total Certifications</span>
+                                <span class="font-bold text-red-600">5</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-gray-600">Active Status</span>
+                                <span class="font-bold text-green-600">100%</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-gray-600">Latest Earned</span>
+                                <span class="font-bold text-gray-900">Jul 2025</span>
                             </div>
                         </div>
                     </div>
@@ -1592,131 +1721,74 @@
                         </button>
                     </div>
                 </div>
+
+                <div class="bg-white p-8 rounded-lg shadow-sm project-card slide-up enhanced-card enhanced-card-modern">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="text-xl font-bold text-gray-900">Technical Blogs on Medium</h3>
+                        <i class="fas fa-external-link-alt text-red-600"></i>
+                    </div>
+                    <p class="text-gray-600 mb-6">
+                        Practical guides on AWS, Kubernetes, CI/CD, and DevSecOps from real-world experience.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="bg-gray-100 text-gray-800 px-2 py-1 rounded text-xs">Medium</span>
+                        <span class="bg-red-100 text-red-800 px-2 py-1 rounded text-xs">DevOps</span>
+                        <span class="bg-orange-100 text-orange-800 px-2 py-1 rounded text-xs">AWS</span>
+                        <span class="bg-indigo-100 text-indigo-800 px-2 py-1 rounded text-xs">Kubernetes</span>
+                        <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-xs">CI/CD</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <div class="flex space-x-4 text-sm text-gray-500">
+                            <span><i class="fas fa-pen-nib text-red-600 mr-1"></i>Writing</span>
+                        </div>
+                        <button onclick="scrollToSection('blogs')" class="text-red-600 hover:text-red-700 font-semibold text-sm">
+                            View Blogs <i class="fas fa-arrow-right ml-1"></i>
+                        </button>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Certifications Section -->
-    <section id="certifications" class="py-20 px-4">
-        <div class="max-w-7xl mx-auto">
+    <!-- Blogs Section -->
+    <section id="blogs" class="py-20 px-4">
+        <div class="max-w-5xl mx-auto">
             <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold mb-4 text-gray-900 section-title">Certifications</h2>
+                <h2 class="text-4xl font-bold mb-4 text-gray-900 section-title">Blogs</h2>
+                <p class="text-gray-600 text-lg">Insights on cloud, DevOps, Kubernetes, security, and automation.</p>
             </div>
-            
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="bg-white p-8 rounded-lg shadow-sm card-hover slide-up">
-                    <div class="flex items-center justify-between mb-4">
-                        <div class="w-16 h-16 bg-white rounded-lg flex items-center justify-center overflow-hidden">
-                            <img src="assets/images/certificates/cka-certified-kubernetes-administrator.png" alt="Certified Kubernetes Administrator" class="w-full h-full object-contain" loading="lazy">
-                        </div>
-                        <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-xs font-semibold">ACTIVE</span>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-2">Certified Kubernetes Administrator</h3>
-                    <p class="text-gray-600 text-sm mb-4">Cloud Native Computing Foundation</p>
-                    <div class="flex justify-between text-sm text-gray-500 mb-4">
-                        <span>Oct 2023</span>
-                        <span>Valid: 3 years</span>
-                    </div>
-                    <a href="https://www.credly.com/badges/b7d4064e-05f6-41ae-b915-6d61cbd826f5/public_url" target="_blank" rel="noopener noreferrer" class="text-red-600 hover:text-red-700 font-semibold text-sm inline-flex items-center">
-                        Verify Certificate <i class="fas fa-external-link-alt ml-1"></i>
-                    </a>
-                </div>
 
-                <div class="bg-white p-8 rounded-lg shadow-sm card-hover slide-up">
-                    <div class="flex items-center justify-between mb-4">
-                        <div class="w-16 h-16 bg-white rounded-lg flex items-center justify-center overflow-hidden">
-                            <img src="assets/images/certificates/aws-certified-devops-engineer-professional.png" alt="AWS DevOps Professional" class="w-full h-full object-contain" loading="lazy">
-                        </div>
-                        <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-xs font-semibold">ACTIVE</span>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-2">AWS DevOps Professional</h3>
-                    <p class="text-gray-600 text-sm mb-4">Amazon Web Services</p>
-                    <div class="flex justify-between text-sm text-gray-500 mb-4">
-                        <span>May 2025</span>
-                        <span>Valid: 3 years</span>
-                    </div>
-                    <a href="https://www.credly.com/badges/c932a0d1-649a-40a8-b6c5-211af03e2e0a" target="_blank" rel="noopener noreferrer" class="text-red-600 hover:text-red-700 font-semibold text-sm inline-flex items-center">
-                        Verify Certificate <i class="fas fa-external-link-alt ml-1"></i>
-                    </a>
+            <!-- Blog Previews -->
+            <div id="blog-previews" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-sm enhanced-card enhanced-card-modern">
+                    <div class="h-40 w-full rounded-md loading-skeleton mb-4"></div>
+                    <div class="h-5 w-3/4 loading-skeleton mb-2"></div>
+                    <div class="h-4 w-full loading-skeleton mb-2"></div>
+                    <div class="h-4 w-2/3 loading-skeleton"></div>
                 </div>
+                <div class="bg-white p-6 rounded-lg shadow-sm enhanced-card enhanced-card-modern">
+                    <div class="h-40 w-full rounded-md loading-skeleton mb-4"></div>
+                    <div class="h-5 w-3/4 loading-skeleton mb-2"></div>
+                    <div class="h-4 w-full loading-skeleton mb-2"></div>
+                    <div class="h-4 w-2/3 loading-skeleton"></div>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-sm enhanced-card enhanced-card-modern">
+                    <div class="h-40 w-full rounded-md loading-skeleton mb-4"></div>
+                    <div class="h-5 w-3/4 loading-skeleton mb-2"></div>
+                    <div class="h-4 w-full loading-skeleton mb-2"></div>
+                    <div class="h-4 w-2/3 loading-skeleton"></div>
+                </div>
+            </div>
 
-                <div class="bg-white p-8 rounded-lg shadow-sm card-hover slide-up">
-                    <div class="flex items-center justify-between mb-4">
-                        <div class="w-16 h-16 bg-white rounded-lg flex items-center justify-center overflow-hidden">
-                            <img src="assets/images/certificates/aws-certified-security-specialty.png" alt="AWS Security Specialty" class="w-full h-full object-contain" loading="lazy">
-                        </div>
-                        <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-xs font-semibold">ACTIVE</span>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-2">AWS Security Specialty</h3>
-                    <p class="text-gray-600 text-sm mb-4">Amazon Web Services</p>
-                    <div class="flex justify-between text-sm text-gray-500 mb-4">
-                        <span>Jan 2022</span>
-                        <span>Valid: 3 years</span>
-                    </div>
-                    <a href="https://www.credly.com/badges/3c066983-6cb0-48c1-b3fd-9ef01aa1e93e/public_url" target="_blank" rel="noopener noreferrer" class="text-red-600 hover:text-red-700 font-semibold text-sm inline-flex items-center">
-                        Verify Certificate <i class="fas fa-external-link-alt ml-1"></i>
-                    </a>
+            <div class="bg-white p-8 md:p-12 rounded-lg shadow-sm enhanced-card enhanced-card-modern text-center mt-12">
+                <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="fab fa-medium text-red-600 text-2xl"></i>
                 </div>
-
-                <div class="bg-white p-8 rounded-lg shadow-sm card-hover slide-up">
-                    <div class="flex items-center justify-between mb-4">
-                        <div class="w-16 h-16 bg-white rounded-lg flex items-center justify-center overflow-hidden">
-                            <img src="assets/images/certificates/ckad-certified-kubernetes-application-developer.png" alt="Certified Kubernetes Application Developer" class="w-full h-full object-contain" loading="lazy">
-                        </div>
-                        <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-xs font-semibold">ACTIVE</span>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-2">Certified Kubernetes Application Developer</h3>
-                    <p class="text-gray-600 text-sm mb-4">Cloud Native Computing Foundation</p>
-                    <div class="flex justify-between text-sm text-gray-500 mb-4">
-                        <span>Jul 2025</span>
-                        <span>Valid: 3 years</span>
-                    </div>
-                    <a href="https://www.credly.com/badges/c51e3db9-5aec-4818-aea5-5dca98dc7b94/public_url" target="_blank" rel="noopener noreferrer" class="text-red-600 hover:text-red-700 font-semibold text-sm inline-flex items-center">
-                        Verify Certificate <i class="fas fa-external-link-alt ml-1"></i>
-                    </a>
-                </div>
-
-                <div class="bg-white p-8 rounded-lg shadow-sm card-hover slide-up">
-                    <div class="flex items-center justify-between mb-4">
-                        <div class="w-16 h-16 bg-white rounded-lg flex items-center justify-center overflow-hidden">
-                            <img src="assets/images/certificates/hashicorp-certified-terraform-associate-003.png" alt="HashiCorp Terraform Associate" class="w-full h-full object-contain" loading="lazy">
-                        </div>
-                        <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-xs font-semibold">ACTIVE</span>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-2">HashiCorp Terraform Associate</h3>
-                    <p class="text-gray-600 text-sm mb-4">HashiCorp</p>
-                    <div class="flex justify-between text-sm text-gray-500 mb-4">
-                        <span>Dec 2024</span>
-                        <span>Valid: 2 years</span>
-                    </div>
-                    <a href="https://www.credly.com/badges/7724881f-04d8-442e-9fef-cc2d18e4d552/public_url" target="_blank" rel="noopener noreferrer" class="text-red-600 hover:text-red-700 font-semibold text-sm inline-flex items-center">
-                        Verify Certificate <i class="fas fa-external-link-alt ml-1"></i>
-                    </a>
-                </div>
-
-                <!-- Summary Card -->
-                <div class="bg-gradient-to-br from-red-50 to-red-100 p-8 rounded-lg shadow-sm slide-up">
-                    <div class="text-center">
-                        <div class="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                            <i class="fas fa-certificate text-white text-2xl"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-gray-900 mb-4">Certification Summary</h3>
-                        <div class="space-y-3">
-                            <div class="flex justify-between">
-                                <span class="text-gray-600">Total Certifications</span>
-                                <span class="font-bold text-red-600">5</span>
-                            </div>
-                            <div class="flex justify-between">
-                                <span class="text-gray-600">Active Status</span>
-                                <span class="font-bold text-green-600">100%</span>
-                            </div>
-                            <div class="flex justify-between">
-                                <span class="text-gray-600">Latest Earned</span>
-                                <span class="font-bold text-gray-900">Jul 2025</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <h3 class="text-2xl font-bold text-gray-900 mb-2">Read on Medium</h3>
+                <p class="text-gray-600 mb-6">Explore tutorials, best practices, and deep dives from my recent work.</p>
+                <a href="https://medium.com/@abhi133182" target="_blank" rel="noopener noreferrer" class="btn-primary inline-block px-8 py-3 rounded-lg font-semibold">
+                    <i class="fas fa-external-link-alt mr-2"></i>Go to Medium
+                </a>
             </div>
         </div>
     </section>
@@ -2117,11 +2189,13 @@
                 requestIdleCallback(() => {
                     typeWriter();
                     initAnimations();
+                    initBlogPreviews();
                 });
             } else {
                 setTimeout(() => {
                     typeWriter();
                     initAnimations();
+                    initBlogPreviews();
                 }, 100);
             }
             
@@ -2155,6 +2229,67 @@
                 });
             });
         });
+
+        // Medium Blog Previews
+        function initBlogPreviews() {
+            const container = document.getElementById('blog-previews');
+            if (!container) return;
+
+            const rssUrl = 'https://medium.com/feed/@abhi133182';
+            const apiUrl = 'https://api.rss2json.com/v1/api.json?rss_url=' + encodeURIComponent(rssUrl);
+
+            fetch(apiUrl)
+                .then(res => res.json())
+                .then(data => {
+                    if (!data || !data.items) throw new Error('No items');
+
+                    const posts = data.items
+                        .filter(item => item && item.link)
+                        .slice(0, 3)
+                        .map(item => {
+                            const content = item.content || '';
+                            const imgMatch = content.match(/<img[^>]+src=\"([^\">]+)\"/i);
+                            const image = item.thumbnail || (imgMatch ? imgMatch[1] : null);
+                            const tmp = document.createElement('div');
+                            tmp.innerHTML = content;
+                            const text = (tmp.textContent || tmp.innerText || '').trim();
+                            const excerpt = text.length > 180 ? text.slice(0, 180) + '…' : text;
+                            return {
+                                title: item.title || 'Untitled',
+                                link: item.link,
+                                image,
+                                pubDate: item.pubDate ? new Date(item.pubDate) : null,
+                                excerpt
+                            };
+                        });
+
+                    renderBlogPreviews(posts);
+                })
+                .catch(() => {
+                    container.innerHTML = `
+                        <div class="col-span-full text-center text-gray-600">
+                            Unable to load previews right now. <a href="https://medium.com/@abhi133182" target="_blank" rel="noopener" class="text-red-600 font-semibold">Visit my Medium profile</a>.
+                        </div>
+                    `;
+                });
+        }
+
+        function renderBlogPreviews(posts) {
+            const container = document.getElementById('blog-previews');
+            if (!container) return;
+
+            const html = posts.map(post => `
+                <a href="${post.link}" target="_blank" rel="noopener noreferrer" class="bg-white p-6 rounded-lg shadow-sm enhanced-card enhanced-card-modern block hover-lift">
+                    <div class="w-full h-40 rounded-md mb-4 overflow-hidden bg-gray-100 flex items-center justify-center">
+                        ${post.image ? `<img src="${post.image}" alt="${post.title}" class="w-full h-full object-cover">` : `<div class=\"w-full h-full bg-gradient-to-br from-red-50 to-red-100\"></div>`}
+                    </div>
+                    <h4 class="text-lg font-semibold text-gray-900 mb-2">${post.title}</h4>
+                    <p class="text-gray-600 text-sm">${post.excerpt}</p>
+                </a>
+            `).join('');
+
+            container.innerHTML = html;
+        }
     </script>
 <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9723842bd4e17f37',t:'MTc1NTcwOTk1NC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
