@@ -821,6 +821,52 @@
         [data-theme="dark"] .bg-gray-200 {
             background: rgba(255, 255, 255, 0.1) !important;
         }
+
+        .nav-link.active {
+            color: #dc2626 !important;
+            font-weight: 700 !important;
+        }
+
+        [data-theme="dark"] .nav-link.active {
+            color: #ffffff !important;
+            font-weight: 800 !important;
+        }
+
+        .filter-chip {
+            border: 1px solid var(--border-color);
+            background: #ffffff;
+            color: var(--text-secondary);
+            padding: 0.375rem 0.75rem;
+            border-radius: 9999px;
+            transition: all 0.2s ease;
+            font-weight: 600;
+            font-size: 0.85rem;
+        }
+
+        .filter-chip:hover {
+            transform: translateY(-1px);
+            border-color: #dc2626;
+            color: #dc2626;
+        }
+
+        .filter-chip.active {
+            background: #dc2626;
+            color: #ffffff;
+            border-color: #dc2626;
+            box-shadow: 0 6px 14px rgba(220, 38, 38, 0.2);
+        }
+
+        [data-theme="dark"] .filter-chip {
+            background: var(--card-bg);
+            color: var(--text-secondary);
+            border-color: var(--border-color);
+        }
+
+        [data-theme="dark"] .filter-chip.active {
+            background: #dc2626;
+            color: #ffffff;
+            border-color: #dc2626;
+        }
     </style>
 </head>
 <body class="transition-all duration-300" data-theme="light" style="background: var(--bg-primary); color: var(--text-primary);">
@@ -854,13 +900,13 @@
                 
                 <!-- Desktop Navigation -->
                 <div class="hidden lg:flex space-x-8 font-medium">
-                    <button onclick="scrollToSection('about')" class="nav-link transition-all duration-300 hover:scale-105" style="color: var(--text-secondary);">About</button>
-                    <button onclick="scrollToSection('certifications')" class="nav-link transition-all duration-300 hover:scale-105" style="color: var(--text-secondary);">Certifications</button>
-                    <button onclick="scrollToSection('skills')" class="nav-link transition-all duration-300 hover:scale-105" style="color: var(--text-secondary);">Skills</button>
-                    <button onclick="scrollToSection('experience')" class="nav-link transition-all duration-300 hover:scale-105" style="color: var(--text-secondary);">Experience</button>
-                    <button onclick="scrollToSection('projects')" class="nav-link transition-all duration-300 hover:scale-105" style="color: var(--text-secondary);">Projects</button>
-                    <button onclick="scrollToSection('blogs')" class="nav-link transition-all duration-300 hover:scale-105" style="color: var(--text-secondary);">Blogs</button>
-                    <button onclick="scrollToSection('contact')" class="nav-link transition-all duration-300 hover:scale-105" style="color: var(--text-secondary);">Contact</button>
+                    <button onclick="scrollToSection('about')" data-section="about" class="nav-link transition-all duration-300 hover:scale-105" style="color: var(--text-secondary);">About</button>
+                    <button onclick="scrollToSection('certifications')" data-section="certifications" class="nav-link transition-all duration-300 hover:scale-105" style="color: var(--text-secondary);">Certifications</button>
+                    <button onclick="scrollToSection('skills')" data-section="skills" class="nav-link transition-all duration-300 hover:scale-105" style="color: var(--text-secondary);">Skills</button>
+                    <button onclick="scrollToSection('experience')" data-section="experience" class="nav-link transition-all duration-300 hover:scale-105" style="color: var(--text-secondary);">Experience</button>
+                    <button onclick="scrollToSection('projects')" data-section="projects" class="nav-link transition-all duration-300 hover:scale-105" style="color: var(--text-secondary);">Projects</button>
+                    <button onclick="scrollToSection('blogs')" data-section="blogs" class="nav-link transition-all duration-300 hover:scale-105" style="color: var(--text-secondary);">Blogs</button>
+                    <button onclick="scrollToSection('contact')" data-section="contact" class="nav-link transition-all duration-300 hover:scale-105" style="color: var(--text-secondary);">Contact</button>
                 </div>
                 
                 <!-- Mobile Menu Button -->
@@ -872,25 +918,25 @@
             <!-- Enhanced Mobile Menu -->
             <div id="mobile-menu" class="lg:hidden mobile-nav hidden mt-4 pb-4 border-t backdrop-blur-sm rounded-lg shadow-lg" style="border-color: var(--border-color); background: var(--nav-bg);">
                 <div class="flex flex-col space-y-3 pt-4 px-4">
-                    <button onclick="scrollToSection('about'); toggleMobileMenu();" class="mobile-nav-item text-left transition-all duration-300 py-2 px-3 rounded-lg hover:bg-red-50" style="color: var(--text-secondary);">
+                    <button onclick="scrollToSection('about'); toggleMobileMenu();" data-section="about" class="mobile-nav-item text-left transition-all duration-300 py-2 px-3 rounded-lg hover:bg-red-50" style="color: var(--text-secondary);">
                         <i class="fas fa-user mr-2"></i>About
                     </button>
-                    <button onclick="scrollToSection('certifications'); toggleMobileMenu();" class="mobile-nav-item text-left transition-all duration-300 py-2 px-3 rounded-lg hover:bg-red-50" style="color: var(--text-secondary);">
+                    <button onclick="scrollToSection('certifications'); toggleMobileMenu();" data-section="certifications" class="mobile-nav-item text-left transition-all duration-300 py-2 px-3 rounded-lg hover:bg-red-50" style="color: var(--text-secondary);">
                         <i class="fas fa-certificate mr-2"></i>Certifications
                     </button>
-                    <button onclick="scrollToSection('skills'); toggleMobileMenu();" class="mobile-nav-item text-left transition-all duration-300 py-2 px-3 rounded-lg hover:bg-red-50" style="color: var(--text-secondary);">
+                    <button onclick="scrollToSection('skills'); toggleMobileMenu();" data-section="skills" class="mobile-nav-item text-left transition-all duration-300 py-2 px-3 rounded-lg hover:bg-red-50" style="color: var(--text-secondary);">
                         <i class="fas fa-cogs mr-2"></i>Skills
                     </button>
-                    <button onclick="scrollToSection('experience'); toggleMobileMenu();" class="mobile-nav-item text-left transition-all duration-300 py-2 px-3 rounded-lg hover:bg-red-50" style="color: var(--text-secondary);">
+                    <button onclick="scrollToSection('experience'); toggleMobileMenu();" data-section="experience" class="mobile-nav-item text-left transition-all duration-300 py-2 px-3 rounded-lg hover:bg-red-50" style="color: var(--text-secondary);">
                         <i class="fas fa-briefcase mr-2"></i>Experience
                     </button>
-                    <button onclick="scrollToSection('projects'); toggleMobileMenu();" class="mobile-nav-item text-left transition-all duration-300 py-2 px-3 rounded-lg hover:bg-red-50" style="color: var(--text-secondary);">
+                    <button onclick="scrollToSection('projects'); toggleMobileMenu();" data-section="projects" class="mobile-nav-item text-left transition-all duration-300 py-2 px-3 rounded-lg hover:bg-red-50" style="color: var(--text-secondary);">
                         <i class="fas fa-project-diagram mr-2"></i>Projects
                     </button>
-                    <button onclick="scrollToSection('blogs'); toggleMobileMenu();" class="mobile-nav-item text-left transition-all duration-300 py-2 px-3 rounded-lg hover:bg-red-50" style="color: var(--text-secondary);">
+                    <button onclick="scrollToSection('blogs'); toggleMobileMenu();" data-section="blogs" class="mobile-nav-item text-left transition-all duration-300 py-2 px-3 rounded-lg hover:bg-red-50" style="color: var(--text-secondary);">
                         <i class="fas fa-book-open mr-2"></i>Blogs
                     </button>
-                    <button onclick="scrollToSection('contact'); toggleMobileMenu();" class="mobile-nav-item text-left transition-all duration-300 py-2 px-3 rounded-lg hover:bg-red-50" style="color: var(--text-secondary);">
+                    <button onclick="scrollToSection('contact'); toggleMobileMenu();" data-section="contact" class="mobile-nav-item text-left transition-all duration-300 py-2 px-3 rounded-lg hover:bg-red-50" style="color: var(--text-secondary);">
                         <i class="fas fa-envelope mr-2"></i>Contact
                     </button>
                 </div>
@@ -1594,10 +1640,20 @@
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-16">
                 <h2 class="text-4xl font-bold mb-4 text-gray-900 section-title">Featured Projects</h2>
+                <div class="mt-6 flex flex-wrap justify-center gap-3">
+                    <button class="filter-chip active" data-filter="all">All</button>
+                    <button class="filter-chip" data-filter="aws">AWS</button>
+                    <button class="filter-chip" data-filter="azure">Azure</button>
+                    <button class="filter-chip" data-filter="kubernetes">Kubernetes</button>
+                    <button class="filter-chip" data-filter="cicd">CI/CD</button>
+                    <button class="filter-chip" data-filter="security">Security</button>
+                    <button class="filter-chip" data-filter="monitoring">Monitoring</button>
+                    <button class="filter-chip" data-filter="devops">DevOps</button>
+                </div>
             </div>
             
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="bg-white p-8 rounded-lg shadow-sm project-card slide-up enhanced-card enhanced-card-modern hover-lift">
+                <div class="bg-white p-8 rounded-lg shadow-sm project-card slide-up enhanced-card enhanced-card-modern hover-lift" data-tags="aws terraform control-tower iam landing-zone devops">
                     <div class="flex items-center justify-between mb-4">
                         <h3 class="text-xl font-bold text-gray-900">AWS Landing Zone Solution</h3>
                         <i class="fas fa-external-link-alt text-red-600"></i>
@@ -1616,13 +1672,18 @@
                         <div class="flex space-x-4 text-sm text-gray-500">
                             <span><i class="fas fa-star text-yellow-500 mr-1"></i>5.0</span>
                         </div>
-                        <button onclick="scrollToSection('contact')" class="text-red-600 hover:text-red-700 font-semibold text-sm">
-                            View Project <i class="fas fa-arrow-right ml-1"></i>
-                        </button>
+                        <div class="flex space-x-3">
+                            <button onclick="scrollToSection('contact')" class="text-red-600 hover:text-red-700 font-semibold text-sm">
+                                View Project <i class="fas fa-arrow-right ml-1"></i>
+                            </button>
+                            <button onclick="openModal('modal-landing-zone')" class="text-red-600 hover:text-red-700 font-semibold text-sm">
+                                Case Study
+                            </button>
+                        </div>
                     </div>
                 </div>
 
-                <div class="bg-white p-8 rounded-lg shadow-sm project-card slide-up enhanced-card enhanced-card-modern">
+                <div class="bg-white p-8 rounded-lg shadow-sm project-card slide-up enhanced-card enhanced-card-modern" data-tags="jenkins docker gitlab kubernetes sonarqube cicd devops">
                     <div class="flex items-center justify-between mb-4">
                         <h3 class="text-xl font-bold text-gray-900">Enterprise CI/CD Pipeline</h3>
                         <i class="fas fa-external-link-alt text-red-600"></i>
@@ -1641,13 +1702,18 @@
                         <div class="flex space-x-4 text-sm text-gray-500">
                             <span><i class="fas fa-star text-yellow-500 mr-1"></i>5.0</span>
                         </div>
-                        <button onclick="scrollToSection('contact')" class="text-red-600 hover:text-red-700 font-semibold text-sm">
-                            View Project <i class="fas fa-arrow-right ml-1"></i>
-                        </button>
+                        <div class="flex space-x-3">
+                            <button onclick="scrollToSection('contact')" class="text-red-600 hover:text-red-700 font-semibold text-sm">
+                                View Project <i class="fas fa-arrow-right ml-1"></i>
+                            </button>
+                            <button onclick="openModal('modal-ci-cd')" class="text-red-600 hover:text-red-700 font-semibold text-sm">
+                                Case Study
+                            </button>
+                        </div>
                     </div>
                 </div>
 
-                <div class="bg-white p-8 rounded-lg shadow-sm project-card slide-up enhanced-card enhanced-card-modern">
+                <div class="bg-white p-8 rounded-lg shadow-sm project-card slide-up enhanced-card enhanced-card-modern" data-tags="azure security hipaa monitoring compliance">
                     <div class="flex items-center justify-between mb-4">
                         <h3 class="text-xl font-bold text-gray-900">Healthcare Security Platform</h3>
                         <i class="fas fa-external-link-alt text-red-600"></i>
@@ -1672,7 +1738,7 @@
                     </div>
                 </div>
 
-                <div class="bg-white p-8 rounded-lg shadow-sm project-card slide-up enhanced-card enhanced-card-modern">
+                <div class="bg-white p-8 rounded-lg shadow-sm project-card slide-up enhanced-card enhanced-card-modern" data-tags="aws kubernetes iot monitoring automation">
                     <div class="flex items-center justify-between mb-4">
                         <h3 class="text-xl font-bold text-gray-900">Manufacturing DevOps Platform</h3>
                         <i class="fas fa-external-link-alt text-red-600"></i>
@@ -1697,7 +1763,7 @@
                     </div>
                 </div>
 
-                <div class="bg-white p-8 rounded-lg shadow-sm project-card slide-up enhanced-card enhanced-card-modern">
+                <div class="bg-white p-8 rounded-lg shadow-sm project-card slide-up enhanced-card enhanced-card-modern" data-tags="azure devops security scalability automation">
                     <div class="flex items-center justify-between mb-4">
                         <h3 class="text-xl font-bold text-gray-900">Education Technology Platform</h3>
                         <i class="fas fa-external-link-alt text-red-600"></i>
@@ -1722,7 +1788,7 @@
                     </div>
                 </div>
 
-                <div class="bg-white p-8 rounded-lg shadow-sm project-card slide-up enhanced-card enhanced-card-modern">
+                <div class="bg-white p-8 rounded-lg shadow-sm project-card slide-up enhanced-card enhanced-card-modern" data-tags="medium devops aws kubernetes cicd">
                     <div class="flex items-center justify-between mb-4">
                         <h3 class="text-xl font-bold text-gray-900">Technical Blogs on Medium</h3>
                         <i class="fas fa-external-link-alt text-red-600"></i>
@@ -1905,6 +1971,37 @@
     <button id="scroll-to-top" onclick="scrollToTop()" class="fixed bottom-8 right-8 bg-red-600 text-white p-3 rounded-full shadow-lg hover:bg-red-700 transition-all duration-300 opacity-0 invisible hover:scale-110 z-40">
         <i class="fas fa-arrow-up text-xl"></i>
     </button>
+
+    <!-- Modals -->
+    <div id="modal-landing-zone" class="fixed inset-0 hidden items-center justify-center z-50">
+        <div class="absolute inset-0 bg-black bg-opacity-50" onclick="closeModal('modal-landing-zone')"></div>
+        <div class="relative bg-white rounded-lg shadow-lg max-w-2xl w-11/12 p-6">
+            <div class="flex justify-between items-center mb-4">
+                <h3 class="text-2xl font-bold text-gray-900">Case Study: AWS Landing Zone</h3>
+                <button onclick="closeModal('modal-landing-zone')" class="text-gray-500 hover:text-gray-700"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="space-y-4 text-gray-700">
+                <p><span class="font-semibold text-gray-900">Problem:</span> Fragmented AWS accounts with inconsistent guardrails and manual provisioning caused risk and delays.</p>
+                <p><span class="font-semibold text-gray-900">Approach:</span> Built a Landing Zone using Control Tower + Terraform modules, with account vending, SCPs, central logging, and IAM baselines.</p>
+                <p><span class="font-semibold text-gray-900">Impact:</span> 40% faster account provisioning, uniform compliance, and reduced operational overhead.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-ci-cd" class="fixed inset-0 hidden items-center justify-center z-50">
+        <div class="absolute inset-0 bg-black bg-opacity-50" onclick="closeModal('modal-ci-cd')"></div>
+        <div class="relative bg-white rounded-lg shadow-lg max-w-2xl w-11/12 p-6">
+            <div class="flex justify-between items-center mb-4">
+                <h3 class="text-2xl font-bold text-gray-900">Case Study: Enterprise CI/CD</h3>
+                <button onclick="closeModal('modal-ci-cd')" class="text-gray-500 hover:text-gray-700"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="space-y-4 text-gray-700">
+                <p><span class="font-semibold text-gray-900">Problem:</span> Long release cycles and frequent regressions across environments.</p>
+                <p><span class="font-semibold text-gray-900">Approach:</span> Implemented Jenkins pipelines with gated stages, containerized builds, IaC env provisioning, and automated SAST/SCA/QoS checks.</p>
+                <p><span class="font-semibold text-gray-900">Impact:</span> 90% reduction in lead time, reliable rollbacks, and consistent, auditable deployments.</p>
+            </div>
+        </div>
+    </div>
 
     <script>
         // Typing Animation
@@ -2190,12 +2287,16 @@
                     typeWriter();
                     initAnimations();
                     initBlogPreviews();
+                    initScrollSpy();
+                    initProjectFilters();
                 });
             } else {
                 setTimeout(() => {
                     typeWriter();
                     initAnimations();
                     initBlogPreviews();
+                    initScrollSpy();
+                    initProjectFilters();
                 }, 100);
             }
             
@@ -2289,6 +2390,88 @@
             `).join('');
 
             container.innerHTML = html;
+        }
+
+        // ScrollSpy active nav
+        function initScrollSpy() {
+            const navButtons = document.querySelectorAll('nav button[data-section]');
+            const sections = Array.from(navButtons).map(btn => btn.getAttribute('data-section'))
+                .map(id => document.getElementById(id))
+                .filter(Boolean);
+
+            const setActive = (id) => {
+                navButtons.forEach(btn => {
+                    const isActive = btn.getAttribute('data-section') === id;
+                    btn.classList.toggle('active', isActive);
+                    if (isActive) {
+                        btn.setAttribute('aria-current', 'page');
+                    } else {
+                        btn.removeAttribute('aria-current');
+                    }
+                });
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        setActive(entry.target.id);
+                    }
+                });
+            }, { root: null, threshold: 0.5, rootMargin: '0px 0px -20% 0px' });
+
+            sections.forEach(sec => observer.observe(sec));
+        }
+
+        // Project filters
+        function initProjectFilters() {
+            const chips = document.querySelectorAll('#projects .filter-chip');
+            const cards = document.querySelectorAll('#projects [data-tags]');
+
+            const applyFilter = (filter) => {
+                cards.forEach(card => {
+                    const tags = (card.getAttribute('data-tags') || '').toLowerCase();
+                    const show = filter === 'all' || tags.includes(filter);
+                    card.style.display = show ? '' : 'none';
+                });
+            };
+
+            chips.forEach(chip => {
+                chip.addEventListener('click', () => {
+                    chips.forEach(c => c.classList.remove('active'));
+                    chip.classList.add('active');
+                    applyFilter(chip.getAttribute('data-filter'));
+                });
+            });
+
+            applyFilter('all');
+        }
+
+        // Modals
+        function openModal(id) {
+            const modal = document.getElementById(id);
+            if (!modal) return;
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            document.addEventListener('keydown', escHandler);
+        }
+
+        function closeModal(id) {
+            const modal = document.getElementById(id);
+            if (!modal) return;
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+            document.removeEventListener('keydown', escHandler);
+        }
+
+        function escHandler(e) {
+            if (e.key === 'Escape') {
+                document.querySelectorAll('[id^="modal-"]').forEach(m => {
+                    if (!m.classList.contains('hidden')) {
+                        m.classList.add('hidden');
+                        m.classList.remove('flex');
+                    }
+                });
+            }
         }
     </script>
 <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9723842bd4e17f37',t:'MTc1NTcwOTk1NC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
