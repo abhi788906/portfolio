@@ -3,11 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
     <meta name="description" content="Abhishek Gupta - Senior DevOps & Security Engineer with expertise in AWS, Kubernetes, CI/CD, and cloud infrastructure">
     <meta name="keywords" content="DevOps, AWS, Kubernetes, CI/CD, Terraform, Security Engineer">
     <meta name="author" content="Abhishek Gupta">
     <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://your-domain.com">
+    <link rel="canonical" href="https://abhishek.secada.in">
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>">
     <title>Abhishek Gupta - DevOps Engineer</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" media="print" onload="this.media='all'">
@@ -191,6 +195,7 @@
             background: var(--dark-red);
             border-color: var(--dark-red);
             transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(220, 38, 38, 0.3);
         }
 
         .btn-outline {
@@ -474,6 +479,7 @@
             background-clip: text;
             text-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             font-weight: 700;
+            letter-spacing: -0.025em;
         }
 
         /* Dark mode title styling */
@@ -492,6 +498,7 @@
         .section-title {
             position: relative;
             display: inline-block;
+            text-align: center;
         }
 
         .section-title::after {
@@ -867,6 +874,195 @@
             color: #ffffff;
             border-color: #dc2626;
         }
+
+        /* Dark mode for live cost button */
+        [data-theme="dark"] .dark-mode-button {
+            background: linear-gradient(135deg, #dc2626, #ef4444);
+            box-shadow: 0 8px 25px rgba(220, 38, 38, 0.3);
+        }
+
+        [data-theme="dark"] .dark-mode-button:hover {
+            box-shadow: 0 12px 35px rgba(220, 38, 38, 0.4);
+            transform: scale(1.05);
+        }
+
+        [data-theme="dark"] .dark-mode-preview {
+            background-color: #1f2937;
+            border-color: #4b5563;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        [data-theme="dark"] .dark-mode-text {
+            color: #f9fafb;
+        }
+
+        [data-theme="dark"] .dark-mode-text-secondary {
+            color: #d1d5db;
+        }
+
+        [data-theme="dark"] .dark-mode-text-tertiary {
+            color: #9ca3af;
+        }
+
+        [data-theme="dark"] .dark-mode-arrow {
+            background-color: #1f2937;
+            border-color: #4b5563;
+        }
+
+        /* Smooth zoom transitions */
+        #live-cost-button,
+        #scroll-to-top,
+        #call-button {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            will-change: transform, right, bottom, font-size, padding;
+            min-width: 48px;
+            min-height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        /* Ensure consistent button sizing */
+        #live-cost-button {
+            width: auto;
+            height: auto;
+            padding: 12px 16px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        #scroll-to-top {
+            width: 48px;
+            height: 48px;
+            padding: 12px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        #call-button {
+            width: 48px;
+            height: 48px;
+            padding: 12px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        /* Enhanced hover effects - make buttons bigger like cards */
+        #live-cost-button:hover {
+            transform: scale(1.15) translateY(-2px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            border-radius: 16px;
+        }
+        
+        #scroll-to-top:hover {
+            transform: scale(1.2) translateY(-2px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            border-radius: 16px;
+        }
+        
+        #call-button:hover {
+            transform: scale(1.2) translateY(-2px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            border-radius: 16px;
+            background-color: #dc2626;
+        }
+        
+        /* Smooth icon scaling on hover */
+        #live-cost-button:hover i,
+        #live-cost-button:hover span {
+            transform: scale(1.1);
+            transition: transform 0.3s ease;
+        }
+        
+        #scroll-to-top:hover i {
+            transform: scale(1.2);
+            transition: transform 0.3s ease;
+        }
+        
+        #call-button:hover i {
+            transform: scale(1.2);
+            transition: transform 0.3s ease;
+        }
+
+        /* Prevent layout shifts during zoom */
+        .floating-shapes {
+            transform: translateZ(0);
+            will-change: transform;
+        }
+
+        /* Optimize animations for zoom */
+        @media (max-resolution: 1dppx) {
+            #live-cost-button,
+            #scroll-to-top {
+                transition: all 0.2s ease-out;
+            }
+        }
+
+        /* High DPI display optimizations */
+        @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+            #live-cost-button,
+            #scroll-to-top {
+                transform: translateZ(0);
+                backface-visibility: hidden;
+            }
+        }
+
+        /* Scroll snapping and zoom optimization */
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 80px;
+        }
+
+        body {
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Section scroll snapping */
+        section {
+            scroll-margin-top: 80px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+        }
+
+        /* Enhanced section spacing */
+        section:not(:first-child) {
+            padding-top: 2rem;
+        }
+
+        /* Zoom-aware typography */
+        @media (max-resolution: 1dppx) {
+            body {
+                font-size: 16px;
+            }
+        }
+
+        @media (min-resolution: 2dppx) {
+            body {
+                font-size: 14px;
+            }
+        }
+
+        /* Prevent zoom issues on mobile */
+        @media screen and (max-width: 768px) {
+            html {
+                -webkit-text-size-adjust: 100%;
+                -ms-text-size-adjust: 100%;
+            }
+        }
+
+        /* Smooth section transitions */
+        .section-transition {
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* Active navigation state */
+        .nav-link.active,
+        .mobile-nav-item.active {
+            color: #dc2626 !important;
+            font-weight: 600;
+        }
     </style>
 </head>
 <body class="transition-all duration-300" data-theme="light" style="background: var(--bg-primary); color: var(--text-primary);">
@@ -885,12 +1081,20 @@
         <div class="max-w-7xl mx-auto px-4 py-4">
             <div class="flex justify-between items-center">
                 <div class="flex items-center space-x-3">
+                    <!-- Open to Work Badge -->
+                    <div class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-xs font-semibold flex items-center">
+                        <i class="fas fa-circle text-green-500 mr-1 text-xs"></i>
+                        Open to Work
+                    </div>
+                    
                     <!-- Dark Mode Toggle Slider -->
                     <div class="flex items-center space-x-2">
                         <i class="fas fa-sun text-yellow-500 text-sm"></i>
                         <label class="relative inline-flex items-center cursor-pointer">
                             <input type="checkbox" id="theme-toggle" class="sr-only" onchange="toggleTheme()">
-                            <div class="w-11 h-6 bg-gray-200 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-red-600"></div>
+                            <div class="w-11 h-6 bg-gray-200 rounded-full transition-all duration-300 relative" id="slider-track">
+                                <div class="absolute top-0.5 left-0.5 w-5 h-5 bg-white rounded-full shadow-md transition-all duration-300 transform translate-x-0" id="slider-thumb"></div>
+                            </div>
                         </label>
                         <i class="fas fa-moon text-gray-600 text-sm"></i>
                     </div>
@@ -900,13 +1104,13 @@
                 
                 <!-- Desktop Navigation -->
                 <div class="hidden lg:flex space-x-8 font-medium">
-                    <button onclick="scrollToSection('about')" data-section="about" class="nav-link transition-all duration-300 hover:scale-105" style="color: var(--text-secondary);">About</button>
-                    <button onclick="scrollToSection('certifications')" data-section="certifications" class="nav-link transition-all duration-300 hover:scale-105" style="color: var(--text-secondary);">Certifications</button>
-                    <button onclick="scrollToSection('skills')" data-section="skills" class="nav-link transition-all duration-300 hover:scale-105" style="color: var(--text-secondary);">Skills</button>
-                    <button onclick="scrollToSection('experience')" data-section="experience" class="nav-link transition-all duration-300 hover:scale-105" style="color: var(--text-secondary);">Experience</button>
-                    <button onclick="scrollToSection('projects')" data-section="projects" class="nav-link transition-all duration-300 hover:scale-105" style="color: var(--text-secondary);">Projects</button>
-                    <button onclick="scrollToSection('blogs')" data-section="blogs" class="nav-link transition-all duration-300 hover:scale-105" style="color: var(--text-secondary);">Blogs</button>
-                    <button onclick="scrollToSection('contact')" data-section="contact" class="nav-link transition-all duration-300 hover:scale-105" style="color: var(--text-secondary);">Contact</button>
+                    <button data-section="about" class="nav-link transition-all duration-300 hover:scale-105" style="color: var(--text-secondary);">About</button>
+                    <button data-section="certifications" class="nav-link transition-all duration-300 hover:scale-105" style="color: var(--text-secondary);">Certifications</button>
+                    <button data-section="skills" class="nav-link transition-all duration-300 hover:scale-105" style="color: var(--text-secondary);">Skills</button>
+                    <button data-section="experience" class="nav-link transition-all duration-300 hover:scale-105" style="color: var(--text-secondary);">Experience</button>
+                    <button data-section="projects" class="nav-link transition-all duration-300 hover:scale-105" style="color: var(--text-secondary);">Projects</button>
+                    <button data-section="blogs" class="nav-link transition-all duration-300 hover:scale-105" style="color: var(--text-secondary);">Blogs</button>
+                    <button data-section="contact" class="nav-link transition-all duration-300 hover:scale-105" style="color: var(--text-secondary);">Contact</button>
                 </div>
                 
                 <!-- Mobile Menu Button -->
@@ -975,9 +1179,11 @@
                 <h2 class="text-2xl md:text-3xl font-semibold mb-6 text-red-600">
                     Senior DevOps & Security Engineer
                 </h2>
-                <p class="text-xl text-gray-600 mb-8 max-w-3xl mx-auto font-mono">
+                <p class="text-xl text-gray-600 mb-8 max-w-3xl font-mono text-center mx-auto">
                     <span class="text-red-600">&gt;</span> <span id="typing-text"></span><span class="cursor text-red-600">|</span>
                 </p>
+                
+
             </div>
 
             <!-- Action Buttons -->
@@ -992,19 +1198,19 @@
 
             <!-- Quick Stats -->
             <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16 max-w-4xl mx-auto slide-up">
-                <div class="text-center">
+                <div class="text-center bg-white rounded-lg shadow-sm p-6 border border-gray-100 hover:shadow-md transition-shadow">
                     <div class="text-3xl font-bold text-red-600 mb-2">5+</div>
                     <div class="text-gray-600 text-sm">Years Experience</div>
                 </div>
-                <div class="text-center">
+                <div class="text-center bg-white rounded-lg shadow-sm p-6 border border-gray-100 hover:shadow-md transition-shadow">
                     <div class="text-3xl font-bold text-red-600 mb-2">35+</div>
                     <div class="text-gray-600 text-sm">Projects Deployed</div>
                 </div>
-                <div class="text-center">
+                <div class="text-center bg-white rounded-lg shadow-sm p-6 border border-gray-100 hover:shadow-md transition-shadow">
                     <div class="text-3xl font-bold text-red-600 mb-2">99.9%</div>
                     <div class="text-gray-600 text-sm">System Uptime</div>
                 </div>
-                <div class="text-center">
+                <div class="text-center bg-white rounded-lg shadow-sm p-6 border border-gray-100 hover:shadow-md transition-shadow">
                     <div class="text-3xl font-bold text-red-600 mb-2">45+</div>
                     <div class="text-gray-600 text-sm">AWS Services</div>
                 </div>
@@ -1016,7 +1222,10 @@
     <section id="about" class="py-20 px-4">
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold mb-4 text-gray-900 section-title">About Me</h2>
+                <div class="flex items-center justify-center mb-4">
+                    <i class="fas fa-user text-red-600 text-2xl mr-3"></i>
+                    <h2 class="text-4xl font-bold text-gray-900 section-title">About Me</h2>
+                </div>
             </div>
             
             <div class="grid lg:grid-cols-2 gap-12 items-center">
@@ -1043,6 +1252,8 @@
                             <span class="text-gray-700 cursor-pointer hover:text-red-600 transition-colors" onclick="revealPhoneNumber(this)" data-phone="+91 7889066943">Let's have a quick chat</span>
                         </div>
                     </div>
+                    
+
                 </div>
                 
                 <div class="slide-up">
@@ -1084,11 +1295,14 @@
     <section id="certifications" class="py-20 px-4">
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold mb-4 text-gray-900 section-title">Certifications</h2>
+                <div class="flex items-center justify-center mb-4">
+                    <i class="fas fa-certificate text-red-600 text-2xl mr-3"></i>
+                    <h2 class="text-4xl font-bold text-gray-900 section-title">Certifications</h2>
+                </div>
             </div>
             
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="bg-white p-8 rounded-lg shadow-sm card-hover slide-up">
+                <div class="bg-white p-8 rounded-lg shadow-sm card-hover slide-up enhanced-card enhanced-card-modern">
                     <div class="flex items-center justify-between mb-4">
                         <div class="w-16 h-16 bg-white rounded-lg flex items-center justify-center overflow-hidden">
                             <img src="assets/images/certificates/cka-certified-kubernetes-administrator.png" alt="Certified Kubernetes Administrator" class="w-full h-full object-contain" loading="lazy">
@@ -1106,7 +1320,7 @@
                     </a>
                 </div>
 
-                <div class="bg-white p-8 rounded-lg shadow-sm card-hover slide-up">
+                <div class="bg-white p-8 rounded-lg shadow-sm card-hover slide-up enhanced-card enhanced-card-modern">
                     <div class="flex items-center justify-between mb-4">
                         <div class="w-16 h-16 bg-white rounded-lg flex items-center justify-center overflow-hidden">
                             <img src="assets/images/certificates/aws-certified-devops-engineer-professional.png" alt="AWS DevOps Professional" class="w-full h-full object-contain" loading="lazy">
@@ -1124,7 +1338,7 @@
                     </a>
                 </div>
 
-                <div class="bg-white p-8 rounded-lg shadow-sm card-hover slide-up">
+                <div class="bg-white p-8 rounded-lg shadow-sm card-hover slide-up enhanced-card enhanced-card-modern">
                     <div class="flex items-center justify-between mb-4">
                         <div class="w-16 h-16 bg-white rounded-lg flex items-center justify-center overflow-hidden">
                             <img src="assets/images/certificates/aws-certified-security-specialty.png" alt="AWS Security Specialty" class="w-full h-full object-contain" loading="lazy">
@@ -1142,7 +1356,7 @@
                     </a>
                 </div>
 
-                <div class="bg-white p-8 rounded-lg shadow-sm card-hover slide-up">
+                <div class="bg-white p-8 rounded-lg shadow-sm card-hover slide-up enhanced-card enhanced-card-modern">
                     <div class="flex items-center justify-between mb-4">
                         <div class="w-16 h-16 bg-white rounded-lg flex items-center justify-center overflow-hidden">
                             <img src="assets/images/certificates/ckad-certified-kubernetes-application-developer.png" alt="Certified Kubernetes Application Developer" class="w-full h-full object-contain" loading="lazy">
@@ -1160,7 +1374,7 @@
                     </a>
                 </div>
 
-                <div class="bg-white p-8 rounded-lg shadow-sm card-hover slide-up">
+                <div class="bg-white p-8 rounded-lg shadow-sm card-hover slide-up enhanced-card enhanced-card-modern">
                     <div class="flex items-center justify-between mb-4">
                         <div class="w-16 h-16 bg-white rounded-lg flex items-center justify-center overflow-hidden">
                             <img src="assets/images/certificates/hashicorp-certified-terraform-associate-003.png" alt="HashiCorp Terraform Associate" class="w-full h-full object-contain" loading="lazy">
@@ -1209,7 +1423,10 @@
     <section id="skills" class="py-20 px-4 bg-gray-50">
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold mb-4 text-gray-900 section-title">Technical Skills</h2>
+                <div class="flex items-center justify-center mb-4">
+                    <i class="fas fa-cogs text-red-600 text-2xl mr-3"></i>
+                    <h2 class="text-4xl font-bold text-gray-900 section-title">Technical Skills</h2>
+                </div>
             </div>
             
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mobile-grid">
@@ -1446,7 +1663,10 @@
     <section id="experience" class="py-20 px-4">
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold mb-4 text-gray-900 section-title">Professional Experience</h2>
+                <div class="flex items-center justify-center mb-4">
+                    <i class="fas fa-briefcase text-red-600 text-2xl mr-3"></i>
+                    <h2 class="text-4xl font-bold text-gray-900 section-title">Professional Experience</h2>
+                </div>
             </div>
             
             <div class="relative">
@@ -1461,7 +1681,7 @@
                                 <div>
                                     <h3 class="text-2xl font-bold text-gray-900 mb-2">Sr. Site Reliability Engineer</h3>
                                     <p class="text-red-600 font-semibold mb-1">Ping Identity</p>
-                                    <p class="text-gray-600 text-sm">Bengaluru, India</p>
+                                    <p class="text-gray-600 text-sm mb-0">Bengaluru, India</p>
                                 </div>
                                 <span class="bg-red-100 text-red-800 px-3 py-1 rounded-full text-sm font-medium mt-2 lg:mt-0">Feb 2025 - July 2025</span>
                             </div>
@@ -1500,7 +1720,7 @@
                                 <div>
                                     <h3 class="text-2xl font-bold text-gray-900 mb-2">Sr. DevOps and Security Engineer</h3>
                                     <p class="text-red-600 font-semibold mb-1">MindMaze</p>
-                                    <p class="text-gray-600 text-sm">Bengaluru, India</p>
+                                    <p class="text-gray-600 text-sm mb-0">Bengaluru, India</p>
                                 </div>
                                 <span class="bg-red-100 text-red-800 px-3 py-1 rounded-full text-sm font-medium mt-2 lg:mt-0">Oct 2023 - Dec 2024</span>
                             </div>
@@ -1538,7 +1758,7 @@
                                 <div>
                                     <h3 class="text-2xl font-bold text-gray-900 mb-2">DevSecOps Engineer</h3>
                                     <p class="text-red-600 font-semibold mb-1">Disney+ Hotstar</p>
-                                    <p class="text-gray-600 text-sm">Gurugram, India</p>
+                                    <p class="text-gray-600 text-sm mb-0">Gurugram, India</p>
                                 </div>
                                 <span class="bg-red-100 text-red-800 px-3 py-1 rounded-full text-sm font-medium mt-2 lg:mt-0">Jun 2022 - Oct 2023</span>
                             </div>
@@ -1581,7 +1801,7 @@
                                 <div>
                                     <h3 class="text-2xl font-bold text-gray-900 mb-2">DevSecOps Engineer</h3>
                                     <p class="text-red-600 font-semibold mb-1">Motherson Group (MTSL)</p>
-                                    <p class="text-gray-600 text-sm">Noida, India</p>
+                                    <p class="text-gray-600 text-sm mb-0">Noida, India</p>
                                 </div>
                                 <span class="bg-red-100 text-red-800 px-3 py-1 rounded-full text-sm font-medium mt-2 lg:mt-0">Nov 2020 - Jun 2022</span>
                             </div>
@@ -1639,7 +1859,10 @@
     <section id="projects" class="py-20 px-4 bg-gray-50">
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold mb-4 text-gray-900 section-title">Featured Projects</h2>
+                <div class="flex items-center justify-center mb-4">
+                    <i class="fas fa-project-diagram text-red-600 text-2xl mr-3"></i>
+                    <h2 class="text-4xl font-bold text-gray-900 section-title">Featured Projects</h2>
+                </div>
                 <div class="mt-6 flex flex-wrap justify-center gap-3">
                     <button class="filter-chip active" data-filter="all">All</button>
                     <button class="filter-chip" data-filter="aws">AWS</button>
@@ -1820,7 +2043,10 @@
     <section id="blogs" class="py-20 px-4">
         <div class="max-w-5xl mx-auto">
             <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold mb-4 text-gray-900 section-title">Blogs</h2>
+                <div class="flex items-center justify-center mb-4">
+                    <i class="fas fa-book-open text-red-600 text-2xl mr-3"></i>
+                    <h2 class="text-4xl font-bold text-gray-900 section-title">Blogs</h2>
+                </div>
                 <p class="text-gray-600 text-lg">Insights on cloud, DevOps, Kubernetes, security, and automation.</p>
             </div>
 
@@ -1863,7 +2089,10 @@
     <section id="contact" class="py-20 px-4 bg-gray-50">
         <div class="max-w-6xl mx-auto">
             <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold mb-4 text-gray-900 section-title">Get In Touch</h2>
+                <div class="flex items-center justify-center mb-4">
+                    <i class="fas fa-envelope text-red-600 text-2xl mr-3"></i>
+                    <h2 class="text-4xl font-bold text-gray-900 section-title">Get In Touch</h2>
+                </div>
                 <p class="text-gray-600 text-lg">Ready to discuss your next DevOps challenge? Let's connect!</p>
             </div>
             
@@ -1925,8 +2154,9 @@
                     </div>
                     <div class="text-center">
                         <button type="submit" class="btn-primary px-8 py-3 rounded-lg font-semibold">
-                            <i class="fas fa-paper-plane mr-2"></i>Send Message
+                            <i class="fas fa-envelope mr-2"></i>Send Message
                         </button>
+                        <p class="text-sm text-gray-500 mt-3">I typically respond within 24 hours</p>
                     </div>
                 </form>
             </div>
@@ -1940,6 +2170,7 @@
                 <div class="status-online mr-3"></div>
                 <div class="font-mono font-semibold">abhishek@devops:~$ Available for new opportunities</div>
             </div>
+
             <p class="text-gray-400 mb-6">
                 © 2025 Abhishek Gupta. Built with passion for DevOps excellence.
             </p>
@@ -1958,9 +2189,43 @@
     </footer>
 
     <!-- Call Button -->
-    <a href="tel:+917889066943" id="call-button" class="fixed bottom-8 left-8 bg-red-600 text-white p-3 rounded-full shadow-lg hover:bg-red-700 transition-all duration-300 opacity-0 invisible hover:scale-110 z-40">
-        <i class="fas fa-phone text-xl"></i>
+    <a href="tel:+917889066943" id="call-button" class="fixed bottom-8 left-8 bg-red-600 text-white p-3 sm:p-4 rounded-full shadow-lg transition-all duration-300 opacity-0 invisible z-40 flex items-center justify-center">
+        <i class="fas fa-phone text-lg sm:text-xl"></i>
     </a>
+
+    <!-- Live Cost Button -->
+    <button id="live-cost-button" onclick="openCostModal()" class="fixed bottom-8 right-24 bg-gradient-to-r from-orange-500 to-red-600 text-white p-3 sm:p-4 rounded-full shadow-lg transition-all duration-300 opacity-0 invisible z-40 group dark-mode-button flex items-center justify-center">
+        <div class="flex items-center space-x-1 sm:space-x-2">
+            <i class="fab fa-aws text-lg sm:text-xl"></i>
+            <span class="font-semibold text-sm sm:text-base">Live Cost</span>
+            <div class="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-green-400 rounded-full animate-pulse"></div>
+        </div>
+        
+        <!-- Hover Preview Card -->
+        <div class="absolute bottom-full right-0 mb-2 sm:mb-4 w-56 sm:w-64 bg-white rounded-lg shadow-xl border border-gray-200 opacity-0 group-hover:opacity-100 transition-all duration-300 transform scale-95 group-hover:scale-100 pointer-events-none dark-mode-preview">
+            <div class="p-3 sm:p-4">
+                <div class="flex items-center justify-between mb-2 sm:mb-3">
+                    <h4 class="font-semibold text-gray-900 text-sm sm:text-base dark-mode-text">Today's Cost</h4>
+                    <div class="flex items-center space-x-1">
+                        <div class="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-green-500 rounded-full animate-pulse"></div>
+                        <span class="text-xs text-green-600 font-semibold">LIVE</span>
+                    </div>
+                </div>
+                <div class="text-xl sm:text-2xl font-bold text-red-600 mb-1 sm:mb-2" id="preview-daily-cost">$0.00</div>
+                <div class="text-xs text-gray-500 mb-2 sm:mb-3 dark-mode-text-secondary">Click for detailed breakdown</div>
+                <div class="flex justify-between text-xs">
+                    <span class="dark-mode-text-secondary">S3: <span id="preview-s3-cost" class="font-semibold">$0.00</span></span>
+                    <span class="dark-mode-text-secondary">CDN: <span id="preview-cloudfront-cost" class="font-semibold">$0.00</span></span>
+                    <span class="dark-mode-text-secondary">API: <span id="preview-lambda-cost" class="font-semibold">$0.00</span></span>
+                    <span class="dark-mode-text-secondary">WAF: <span class="font-semibold text-green-600">FREE</span></span>
+                </div>
+
+
+                <div class="text-xs text-gray-400 mt-1 dark-mode-text-tertiary">Deployed: Aug 1, 2025</div>
+            </div>
+            <div class="absolute bottom-0 right-3 sm:right-4 transform translate-y-1/2 rotate-45 w-1.5 h-1.5 sm:w-2 sm:h-2 bg-white border-r border-b border-gray-200 dark-mode-arrow"></div>
+        </div>
+    </button>
 
     <!-- Scroll Progress Indicator -->
     <div class="fixed top-0 left-0 w-full h-1 bg-gray-200 z-50">
@@ -1968,8 +2233,8 @@
     </div>
 
     <!-- Scroll to Top Button -->
-    <button id="scroll-to-top" onclick="scrollToTop()" class="fixed bottom-8 right-8 bg-red-600 text-white p-3 rounded-full shadow-lg hover:bg-red-700 transition-all duration-300 opacity-0 invisible hover:scale-110 z-40">
-        <i class="fas fa-arrow-up text-xl"></i>
+    <button id="scroll-to-top" onclick="scrollToTop()" class="fixed bottom-8 right-8 bg-red-600 text-white p-3 sm:p-4 rounded-full shadow-lg transition-all duration-300 opacity-0 invisible z-40 flex items-center justify-center">
+        <i class="fas fa-arrow-up text-lg sm:text-xl"></i>
     </button>
 
     <!-- Modals -->
@@ -1984,6 +2249,152 @@
                 <p><span class="font-semibold text-gray-900">Problem:</span> Fragmented AWS accounts with inconsistent guardrails and manual provisioning caused risk and delays.</p>
                 <p><span class="font-semibold text-gray-900">Approach:</span> Built a Landing Zone using Control Tower + Terraform modules, with account vending, SCPs, central logging, and IAM baselines.</p>
                 <p><span class="font-semibold text-gray-900">Impact:</span> 40% faster account provisioning, uniform compliance, and reduced operational overhead.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Live Cost Modal -->
+    <div id="modal-live-cost" class="fixed inset-0 hidden items-center justify-center z-50 p-4">
+        <div class="absolute inset-0 bg-black bg-opacity-50" onclick="closeModal('modal-live-cost')"></div>
+        <div class="relative bg-white rounded-xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+            <div class="p-4 sm:p-6 lg:p-8">
+            <div class="flex justify-between items-center mb-4 sm:mb-6">
+                <h3 class="text-lg sm:text-xl lg:text-2xl font-bold text-gray-900 flex items-center">
+                    <i class="fab fa-aws text-orange-500 mr-2 sm:mr-3 text-lg sm:text-xl lg:text-2xl"></i>
+                    <span class="hidden sm:inline">Live AWS Cost Monitor</span>
+                    <span class="sm:hidden">Live Cost</span>
+                </h3>
+                <button onclick="closeModal('modal-live-cost')" class="text-gray-500 hover:text-gray-700 p-2 hover:bg-gray-100 rounded-full transition-colors">
+                    <i class="fas fa-times text-lg sm:text-xl"></i>
+                </button>
+            </div>
+            
+            <!-- Live Status -->
+            <div class="flex items-center justify-center mb-4 sm:mb-6">
+                <div class="flex items-center space-x-2 bg-green-50 px-3 sm:px-4 py-2 rounded-full">
+                    <div class="w-2 h-2 sm:w-3 sm:h-3 bg-green-500 rounded-full animate-pulse shadow-lg"></div>
+                    <span class="text-green-700 font-semibold text-sm sm:text-base">LIVE MONITORING ACTIVE</span>
+                </div>
+            </div>
+            
+            <!-- Main Cost Display -->
+            <div class="text-center mb-6 sm:mb-8">
+                <div class="text-3xl sm:text-4xl lg:text-5xl font-bold text-red-600 mb-2" id="modal-daily-cost">$0.00</div>
+                <div class="text-base sm:text-lg text-gray-600 mb-3 sm:mb-4">Today's Portfolio Website Cost</div>
+                
+                <!-- Progress Bar -->
+                <div class="w-full bg-gray-200 rounded-full h-3 mb-6">
+                    <div class="bg-gradient-to-r from-red-500 to-orange-500 h-3 rounded-full transition-all duration-1000" style="width: 0%" id="modal-cost-progress"></div>
+                </div>
+                
+                <!-- Monthly Comparison -->
+                <div class="grid grid-cols-2 gap-6 mb-8">
+                    <div class="bg-gray-50 rounded-lg p-4">
+                        <div class="text-gray-500 text-sm font-medium mb-1">This Month</div>
+                        <div class="text-2xl font-bold text-gray-900" id="modal-monthly-cost">$0.00</div>
+                    </div>
+                                            <div class="bg-gray-50 rounded-lg p-4">
+                            <div class="text-gray-500 text-sm font-medium mb-1">Since Deployment</div>
+                            <div class="text-2xl font-bold text-gray-900" id="modal-last-month-cost">$0.00</div>
+                        </div>
+                </div>
+            </div>
+            
+            <!-- Detailed Cost Breakdown -->
+            <div class="bg-gray-50 rounded-lg p-6 mb-6">
+                <h4 class="text-lg font-semibold text-gray-900 mb-4">Cost Breakdown</h4>
+                <div class="space-y-4">
+                    <div class="flex justify-between items-center p-3 bg-white rounded-lg shadow-sm">
+                        <div class="flex items-center">
+                            <i class="fas fa-database text-blue-500 mr-3 text-lg"></i>
+                            <div>
+                                <div class="font-semibold text-gray-900">S3 Storage</div>
+                                <div class="text-sm text-gray-500">Website files & assets</div>
+                            </div>
+                        </div>
+                        <div class="text-right">
+                            <div class="font-bold text-gray-900" id="modal-s3-cost">$0.00</div>
+                            <div class="text-xs text-gray-500">per day</div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex justify-between items-center p-3 bg-white rounded-lg shadow-sm">
+                        <div class="flex items-center">
+                            <i class="fas fa-cloud text-orange-500 mr-3 text-lg"></i>
+                            <div>
+                                <div class="font-semibold text-gray-900">CloudFront CDN</div>
+                                <div class="text-sm text-gray-500">Global content delivery</div>
+                            </div>
+                        </div>
+                        <div class="text-right">
+                            <div class="font-bold text-gray-900" id="modal-cloudfront-cost">$0.00</div>
+                            <div class="text-xs text-gray-500">per day</div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex justify-between items-center p-3 bg-white rounded-lg shadow-sm">
+                        <div class="flex items-center">
+                            <i class="fas fa-code text-purple-500 mr-3 text-lg"></i>
+                            <div>
+                                <div class="font-semibold text-gray-900">Lambda API</div>
+                                <div class="text-sm text-gray-500">Live cost monitoring</div>
+                            </div>
+                        </div>
+                        <div class="text-right">
+                            <div class="font-bold text-gray-900" id="modal-lambda-cost">$0.00</div>
+                            <div class="text-xs text-gray-500">per day</div>
+                        </div>
+                    </div>
+                    
+
+                    
+
+                    
+                    <div class="flex justify-between items-center p-3 bg-white rounded-lg shadow-sm">
+                        <div class="flex items-center">
+                            <i class="fas fa-cloud text-orange-500 mr-3 text-lg"></i>
+                            <div>
+                                <div class="font-semibold text-gray-900">Cloudflare WAF</div>
+                                <div class="text-sm text-gray-500">DDoS protection & security</div>
+                            </div>
+                        </div>
+                        <div class="text-right">
+                            <div class="font-bold text-green-600">FREE</div>
+                            <div class="text-xs text-gray-500">Cloudflare Free</div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex justify-between items-center p-3 bg-white rounded-lg shadow-sm">
+                        <div class="flex items-center">
+                            <i class="fas fa-shield-alt text-green-500 mr-3 text-lg"></i>
+                            <div>
+                                <div class="font-semibold text-gray-900">SSL Certificate</div>
+                                <div class="text-sm text-gray-500">HTTPS security</div>
+                            </div>
+                        </div>
+                        <div class="text-right">
+                            <div class="font-bold text-green-600">FREE</div>
+                            <div class="text-xs text-gray-500">AWS ACM</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Cost Efficiency Info -->
+            <div class="bg-blue-50 rounded-lg p-4 mb-6">
+                <div class="flex items-start">
+                    <i class="fas fa-chart-line text-blue-500 mr-3 mt-1"></i>
+                    <div>
+                        <h5 class="font-semibold text-blue-900 mb-1">Cost Efficiency</h5>
+                        <p class="text-sm text-blue-700">This portfolio website costs approximately $0.18 per day (~$5.40 per month), including Lambda API for live cost monitoring and free Cloudflare WAF protection. Deployed on August 1, 2025.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Last Updated -->
+            <div class="text-center text-sm text-gray-500">
+                <i class="fas fa-sync-alt mr-1"></i>
+                Last updated: <span id="modal-last-updated">Loading...</span>
             </div>
         </div>
     </div>
@@ -2003,6 +2414,270 @@
         </div>
     </div>
 
+    <!-- Experience Modals -->
+    <!-- Ping Identity Modal -->
+    <div id="modal-ping-identity" class="hidden fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
+        <div class="bg-white rounded-lg max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+            <div class="p-6 border-b flex justify-between items-center">
+                <div class="flex items-center space-x-3">
+                    <div class="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center">
+                        <i class="fas fa-chart-line text-red-600 text-xl"></i>
+                    </div>
+                    <div>
+                        <h2 class="text-2xl font-bold text-gray-900">Sr. Site Reliability Engineer</h2>
+                        <p class="text-red-600 font-semibold">Ping Identity • Feb 2025 - July 2025</p>
+                    </div>
+                </div>
+                <button onclick="closeModal('modal-ping-identity')" class="text-gray-500 hover:text-gray-700 p-2 hover:bg-gray-100 rounded-full transition-colors">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="p-6">
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <h3 class="text-lg font-semibold text-gray-900 mb-3">Key Achievements</h3>
+                        <ul class="text-gray-600 space-y-3 mb-6">
+                            <li class="flex items-start"><i class="fas fa-trophy text-yellow-500 mr-3 mt-1"></i>Reduced workspace spin-up time by 40%</li>
+                            <li class="flex items-start"><i class="fas fa-trophy text-yellow-500 mr-3 mt-1"></i>Cut new-hire setup time by 60%</li>
+                            <li class="flex items-start"><i class="fas fa-trophy text-yellow-500 mr-3 mt-1"></i>Zero critical incidents during migration</li>
+                            <li class="flex items-start"><i class="fas fa-trophy text-yellow-500 mr-3 mt-1"></i>Maintained zero downtime on-call support</li>
+                        </ul>
+                        
+                        <h3 class="text-lg font-semibold text-gray-900 mb-3">Location</h3>
+                        <p class="text-gray-600 mb-4">Bengaluru, India</p>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-lg font-semibold text-gray-900 mb-3">Technologies & Skills</h3>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-xs">AWS</span>
+                            <span class="bg-red-100 text-red-800 px-3 py-1 rounded-full text-xs">GitLab</span>
+                            <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-xs">Terraform</span>
+                            <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-xs">MongoDB</span>
+                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-xs">RDS</span>
+                            <span class="bg-cyan-100 text-cyan-800 px-3 py-1 rounded-full text-xs">New Relic</span>
+                            <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-xs">EKS</span>
+                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-xs">Docker</span>
+                            <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-xs">Kubernetes</span>
+                            <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-xs">PagerDuty</span>
+                            <span class="bg-red-100 text-red-800 px-3 py-1 rounded-full text-xs">IAM</span>
+                            <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-xs">Python</span>
+                        </div>
+                        
+                        <h3 class="text-lg font-semibold text-gray-900 mb-3">Key Responsibilities</h3>
+                        <ul class="text-gray-600 space-y-2 text-sm">
+                            <li class="flex items-start"><i class="fas fa-chevron-right text-red-600 mr-2 mt-1 text-xs"></i>Optimized workspace infrastructure and deployment processes</li>
+                            <li class="flex items-start"><i class="fas fa-chevron-right text-red-600 mr-2 mt-1 text-xs"></i>Streamlined new-hire onboarding and setup procedures</li>
+                            <li class="flex items-start"><i class="fas fa-chevron-right text-red-600 mr-2 mt-1 text-xs"></i>Managed critical system migrations with zero downtime</li>
+                            <li class="flex items-start"><i class="fas fa-chevron-right text-red-600 mr-2 mt-1 text-xs"></i>Provided 24/7 on-call support for production systems</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MindMaze Modal -->
+    <div id="modal-mindmaze" class="hidden fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
+        <div class="bg-white rounded-lg max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+            <div class="p-6 border-b flex justify-between items-center">
+                <div class="flex items-center space-x-3">
+                    <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
+                        <i class="fas fa-shield-alt text-blue-600 text-xl"></i>
+                    </div>
+                    <div>
+                        <h2 class="text-2xl font-bold text-gray-900">Sr. DevOps and Security Engineer</h2>
+                        <p class="text-blue-600 font-semibold">MindMaze • Oct 2023 - Dec 2024</p>
+                    </div>
+                </div>
+                <button onclick="closeModal('modal-mindmaze')" class="text-gray-500 hover:text-gray-700 p-2 hover:bg-gray-100 rounded-full transition-colors">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="p-6">
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <h3 class="text-lg font-semibold text-gray-900 mb-3">Key Achievements</h3>
+                        <ul class="text-gray-600 space-y-3 mb-6">
+                            <li class="flex items-start"><i class="fas fa-trophy text-yellow-500 mr-3 mt-1"></i>90% reduction in deployment timelines</li>
+                            <li class="flex items-start"><i class="fas fa-trophy text-yellow-500 mr-3 mt-1"></i>60% reduction in security incidents</li>
+                            <li class="flex items-start"><i class="fas fa-trophy text-yellow-500 mr-3 mt-1"></i>25% improvement in incident response</li>
+                            <li class="flex items-start"><i class="fas fa-trophy text-yellow-500 mr-3 mt-1"></i>15% increase in cluster uptime</li>
+                        </ul>
+                        
+                        <h3 class="text-lg font-semibold text-gray-900 mb-3">Location</h3>
+                        <p class="text-gray-600 mb-4">Bengaluru, India</p>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-lg font-semibold text-gray-900 mb-3">Technologies & Skills</h3>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-xs">Azure</span>
+                            <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-xs">Azure DevOps</span>
+                            <span class="bg-red-100 text-red-800 px-3 py-1 rounded-full text-xs">Bitbucket</span>
+                            <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-xs">Terraform</span>
+                            <span class="bg-cyan-100 text-cyan-800 px-3 py-1 rounded-full text-xs">CI/CD</span>
+                            <span class="bg-red-100 text-red-800 px-3 py-1 rounded-full text-xs">Java</span>
+                            <span class="bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-xs">Maven</span>
+                            <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-xs">Spring Framework</span>
+                            <span class="bg-red-100 text-red-800 px-3 py-1 rounded-full text-xs">Angular</span>
+                            <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-xs">Snyk</span>
+                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-xs">Azure Kubernetes Services</span>
+                        </div>
+                        
+                        <h3 class="text-lg font-semibold text-gray-900 mb-3">Key Responsibilities</h3>
+                        <ul class="text-gray-600 space-y-2 text-sm">
+                            <li class="flex items-start"><i class="fas fa-chevron-right text-blue-600 mr-2 mt-1 text-xs"></i>Streamlined deployment pipelines and automation</li>
+                            <li class="flex items-start"><i class="fas fa-chevron-right text-blue-600 mr-2 mt-1 text-xs"></i>Enhanced security monitoring and incident response</li>
+                            <li class="flex items-start"><i class="fas fa-chevron-right text-blue-600 mr-2 mt-1 text-xs"></i>Optimized Azure Kubernetes cluster performance</li>
+                            <li class="flex items-start"><i class="fas fa-chevron-right text-blue-600 mr-2 mt-1 text-xs"></i>Implemented DevSecOps best practices</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Disney+ Hotstar Modal -->
+    <div id="modal-hotstar" class="hidden fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
+        <div class="bg-white rounded-lg max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+            <div class="p-6 border-b flex justify-between items-center">
+                <div class="flex items-center space-x-3">
+                    <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center">
+                        <i class="fas fa-lock text-purple-600 text-xl"></i>
+                    </div>
+                    <div>
+                        <h2 class="text-2xl font-bold text-gray-900">DevSecOps Engineer</h2>
+                        <p class="text-purple-600 font-semibold">Disney+ Hotstar • Jun 2022 - Oct 2023</p>
+                    </div>
+                </div>
+                <button onclick="closeModal('modal-hotstar')" class="text-gray-500 hover:text-gray-700 p-2 hover:bg-gray-100 rounded-full transition-colors">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="p-6">
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <h3 class="text-lg font-semibold text-gray-900 mb-3">Key Achievements</h3>
+                        <ul class="text-gray-600 space-y-3 mb-6">
+                            <li class="flex items-start"><i class="fas fa-trophy text-yellow-500 mr-3 mt-1"></i>50% improvement in security operations</li>
+                            <li class="flex items-start"><i class="fas fa-trophy text-yellow-500 mr-3 mt-1"></i>70% reduction in data breach risk</li>
+                            <li class="flex items-start"><i class="fas fa-trophy text-yellow-500 mr-3 mt-1"></i>80% decrease in remediation time</li>
+                            <li class="flex items-start"><i class="fas fa-trophy text-yellow-500 mr-3 mt-1"></i>40% reduction in security incidents</li>
+                        </ul>
+                        
+                        <h3 class="text-lg font-semibold text-gray-900 mb-3">Location</h3>
+                        <p class="text-gray-600 mb-4">Gurugram, India</p>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-lg font-semibold text-gray-900 mb-3">Technologies & Skills</h3>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-xs">AWS</span>
+                            <span class="bg-red-100 text-red-800 px-3 py-1 rounded-full text-xs">CloudTrail</span>
+                            <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-xs">Snyk</span>
+                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-xs">Wiz</span>
+                            <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-xs">Datadog</span>
+                            <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-xs">Coralogix</span>
+                            <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-xs">Terraform</span>
+                            <span class="bg-cyan-100 text-cyan-800 px-3 py-1 rounded-full text-xs">CI/CD</span>
+                            <span class="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-xs">Github Actions</span>
+                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-xs">Docker</span>
+                            <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-xs">EKS</span>
+                            <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-xs">IAM</span>
+                            <span class="bg-red-100 text-red-800 px-3 py-1 rounded-full text-xs">GuardDuty</span>
+                            <span class="bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-xs">Inspector</span>
+                            <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-xs">Kubernetes</span>
+                            <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-xs">PagerDuty</span>
+                        </div>
+                        
+                        <h3 class="text-lg font-semibold text-gray-900 mb-3">Key Responsibilities</h3>
+                        <ul class="text-gray-600 space-y-2 text-sm">
+                            <li class="flex items-start"><i class="fas fa-chevron-right text-purple-600 mr-2 mt-1 text-xs"></i>Enhanced security monitoring and threat detection</li>
+                            <li class="flex items-start"><i class="fas fa-chevron-right text-purple-600 mr-2 mt-1 text-xs"></i>Implemented automated vulnerability management</li>
+                            <li class="flex items-start"><i class="fas fa-chevron-right text-purple-600 mr-2 mt-1 text-xs"></i>Reduced data breach risks through proactive measures</li>
+                            <li class="flex items-start"><i class="fas fa-chevron-right text-purple-600 mr-2 mt-1 text-xs"></i>Optimized incident response and remediation processes</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Motherson Group Modal -->
+    <div id="modal-motherson" class="hidden fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
+        <div class="bg-white rounded-lg max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+            <div class="p-6 border-b flex justify-between items-center">
+                <div class="flex items-center space-x-3">
+                    <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
+                        <i class="fas fa-cloud text-green-600 text-xl"></i>
+                    </div>
+                    <div>
+                        <h2 class="text-2xl font-bold text-gray-900">DevSecOps Engineer</h2>
+                        <p class="text-green-600 font-semibold">Motherson Group (MTSL) • Nov 2020 - Jun 2022</p>
+                    </div>
+                </div>
+                <button onclick="closeModal('modal-motherson')" class="text-gray-500 hover:text-gray-700 p-2 hover:bg-gray-100 rounded-full transition-colors">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="p-6">
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <h3 class="text-lg font-semibold text-gray-900 mb-3">Key Achievements</h3>
+                        <ul class="text-gray-600 space-y-3 mb-6">
+                            <li class="flex items-start"><i class="fas fa-trophy text-yellow-500 mr-3 mt-1"></i>30% improvement in incident response time</li>
+                            <li class="flex items-start"><i class="fas fa-trophy text-yellow-500 mr-3 mt-1"></i>20% increase in cluster uptime</li>
+                            <li class="flex items-start"><i class="fas fa-trophy text-yellow-500 mr-3 mt-1"></i>40% reduction in operational costs</li>
+                            <li class="flex items-start"><i class="fas fa-trophy text-yellow-500 mr-3 mt-1"></i>40% reduction in migration downtime</li>
+                            <li class="flex items-start"><i class="fas fa-trophy text-yellow-500 mr-3 mt-1"></i>30% faster deployment times</li>
+                            <li class="flex items-start"><i class="fas fa-trophy text-yellow-500 mr-3 mt-1"></i>50% reduction in audit preparation time</li>
+                        </ul>
+                        
+                        <h3 class="text-lg font-semibold text-gray-900 mb-3">Location</h3>
+                        <p class="text-gray-600 mb-4">Noida, India</p>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-lg font-semibold text-gray-900 mb-3">Technologies & Skills</h3>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-xs">AWS</span>
+                            <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-xs">Kubernetes</span>
+                            <span class="bg-red-100 text-red-800 px-3 py-1 rounded-full text-xs">CloudTrail</span>
+                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-xs">S3</span>
+                            <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-xs">Lambda</span>
+                            <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-xs">Landing Zone</span>
+                            <span class="bg-red-100 text-red-800 px-3 py-1 rounded-full text-xs">Control Tower</span>
+                            <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-xs">Terraform</span>
+                            <span class="bg-cyan-100 text-cyan-800 px-3 py-1 rounded-full text-xs">CI/CD</span>
+                            <span class="bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-xs">AWS CodePipeline</span>
+                            <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-xs">EKS</span>
+                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-xs">Docker</span>
+                            <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-xs">Security Monitoring</span>
+                            <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-xs">CloudWatch</span>
+                            <span class="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-xs">EC2</span>
+                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-xs">RDS</span>
+                            <span class="bg-red-100 text-red-800 px-3 py-1 rounded-full text-xs">IAM</span>
+                        </div>
+                        
+                        <h3 class="text-lg font-semibold text-gray-900 mb-3">Key Responsibilities</h3>
+                        <ul class="text-gray-600 space-y-2 text-sm">
+                            <li class="flex items-start"><i class="fas fa-chevron-right text-green-600 mr-2 mt-1 text-xs"></i>Managed Kubernetes cluster security with automated monitoring</li>
+                            <li class="flex items-start"><i class="fas fa-chevron-right text-green-600 mr-2 mt-1 text-xs"></i>Engineered serverless architecture using AWS services</li>
+                            <li class="flex items-start"><i class="fas fa-chevron-right text-green-600 mr-2 mt-1 text-xs"></i>Automated on-premises database migration to AWS RDS</li>
+                            <li class="flex items-start"><i class="fas fa-chevron-right text-green-600 mr-2 mt-1 text-xs"></i>Implemented Infrastructure as Code with CloudFormation and Terraform</li>
+                            <li class="flex items-start"><i class="fas fa-chevron-right text-green-600 mr-2 mt-1 text-xs"></i>Established AWS Control Tower and automated resource tagging</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Generated Configuration Files -->
+    <script src="assets/js/config.js"></script>
+    <script src="assets/js/billing-config.js"></script>
+    
     <script>
         // Typing Animation
         const texts = [
@@ -2067,41 +2742,68 @@
             }
         });
 
-        // Enhanced scroll with smooth animation
+        // Enhanced scroll with smooth animation and zoom optimization
         function scrollToSection(sectionId) {
             const section = document.getElementById(sectionId);
             if (section) {
-                const offset = 80; // Account for fixed header
-                const targetPosition = section.offsetTop - offset;
+                // Get current zoom level and adjust offset accordingly
+                const zoomLevel = window.devicePixelRatio || 1;
+                const navHeight = 80; // Base navigation height
+                const adjustedOffset = Math.max(navHeight, Math.floor(navHeight / zoomLevel));
                 
+                // Calculate target position with zoom compensation
+                const targetPosition = section.offsetTop - adjustedOffset;
+                
+                // Use smooth scrolling with zoom-aware positioning
                 window.scrollTo({
                     top: targetPosition,
                     behavior: 'smooth'
                 });
+                
+                // Update active navigation state
+                updateActiveNavigation(sectionId);
             }
         }
         
-        // Smooth Scrolling
-        function scrollToSection(sectionId) {
-            const section = document.getElementById(sectionId);
-            if (section) {
-                section.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
+        // Update active navigation state
+        function updateActiveNavigation(activeSectionId) {
+            // Remove active class from all nav links
+            document.querySelectorAll('.nav-link, .mobile-nav-item').forEach(link => {
+                link.classList.remove('active');
+            });
+            
+            // Add active class to current section
+            const activeLink = document.querySelector(`[data-section="${activeSectionId}"]`);
+            if (activeLink) {
+                activeLink.classList.add('active');
             }
         }
         
-        // Download Resume
+        // Download Resume with security checks
         function downloadResume() {
-            // Download the actual resume file
-            const link = document.createElement('a');
-            link.href = 'assets/Abhishek_Gupta_Resume.pdf';
-            link.download = 'Abhishek_Gupta_Resume.pdf';
-            link.target = '_blank';
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
+            try {
+                // Validate file path
+                const resumePath = './assets/Abhishek_Gupta_Resume.pdf';
+                
+                // Create secure download link
+                const link = document.createElement('a');
+                link.href = resumePath;
+                link.download = 'Abhishek_Gupta_Resume.pdf';
+                link.target = '_blank';
+                link.rel = 'noopener noreferrer';
+                
+                // Add security attributes
+                link.setAttribute('download', 'Abhishek_Gupta_Resume.pdf');
+                
+                // Trigger download
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+                
+            } catch (error) {
+                console.error('Download error:', error);
+                alert('Unable to download resume. Please try again.');
+            }
         }
         
         // Initialize Floating Shapes
@@ -2117,17 +2819,32 @@
         function toggleTheme() {
             const body = document.body;
             const themeToggle = document.getElementById('theme-toggle');
+            const sliderTrack = document.getElementById('slider-track');
+            const sliderThumb = document.getElementById('slider-thumb');
             const currentTheme = body.getAttribute('data-theme');
             
             if (currentTheme === 'light') {
+                // Switch to dark mode
                 body.setAttribute('data-theme', 'dark');
                 themeToggle.checked = true;
                 localStorage.setItem('theme', 'dark');
+                
+                // Animate slider to right (dark mode)
+                sliderTrack.style.backgroundColor = '#dc2626';
+                sliderThumb.style.transform = 'translateX(20px)';
             } else {
+                // Switch to light mode
                 body.setAttribute('data-theme', 'light');
                 themeToggle.checked = false;
                 localStorage.setItem('theme', 'light');
+                
+                // Animate slider to left (light mode)
+                sliderTrack.style.backgroundColor = '#e5e7eb';
+                sliderThumb.style.transform = 'translateX(0px)';
             }
+            
+            // Update button positions after theme change
+            setTimeout(updateButtonPositions, 100);
         }
 
         // Initialize Theme
@@ -2135,12 +2852,20 @@
             const savedTheme = localStorage.getItem('theme') || 'light';
             const body = document.body;
             const themeToggle = document.getElementById('theme-toggle');
+            const sliderTrack = document.getElementById('slider-track');
+            const sliderThumb = document.getElementById('slider-thumb');
             
             body.setAttribute('data-theme', savedTheme);
             if (savedTheme === 'dark') {
                 themeToggle.checked = true;
+                // Set slider to dark mode position
+                sliderTrack.style.backgroundColor = '#dc2626';
+                sliderThumb.style.transform = 'translateX(20px)';
             } else {
                 themeToggle.checked = false;
+                // Set slider to light mode position
+                sliderTrack.style.backgroundColor = '#e5e7eb';
+                sliderThumb.style.transform = 'translateX(0px)';
             }
         }
 
@@ -2164,16 +2889,39 @@
             element.classList.add('text-red-600', 'font-semibold');
         }
 
+        // Simple input validation for performance
+        function validateInput(input, type) {
+            const value = input.trim();
+            return value.length > 0;
+        }
+
+
+
+
+
+
+
         // Send Message
-        function sendMessage(event) {
+        async function sendMessage(event) {
             event.preventDefault();
             
             // Get form data
             const form = event.target;
-            const name = form.querySelector('input[type="text"]').value;
-            const email = form.querySelector('input[type="email"]').value;
-            const subject = form.querySelector('select').value;
-            const message = form.querySelector('textarea').value;
+            const nameInput = form.querySelector('input[type="text"]');
+            const emailInput = form.querySelector('input[type="email"]');
+            const subjectInput = form.querySelector('select');
+            const messageInput = form.querySelector('textarea');
+            
+            const name = nameInput.value;
+            const email = emailInput.value;
+            const subject = subjectInput.value;
+            const message = messageInput.value;
+            
+            // Simple validation
+            if (!name || !email || !subject || !message) {
+                alert('Please fill in all fields');
+                return;
+            }
             
             // Validate form fields
             if (!name || !email || !subject || !message) {
@@ -2181,15 +2929,63 @@
                 return;
             }
             
-            // Create mailto link with form data
-            // Note: 'from' parameter is not supported in mailto links, but the email client will use the user's default email
-            const mailtoLink = `mailto:abhi133182@outlook.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`)}`;
+            // Email validation
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                alert('Please enter a valid email address.');
+                return;
+            }
             
-            // Open email client
-            window.location.href = mailtoLink;
+            // Show loading state
+            const submitButton = form.querySelector('button[type="submit"]');
+            const originalText = submitButton.innerHTML;
+            submitButton.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i>Preparing Email...';
+            submitButton.disabled = true;
             
-            // Show success message
-            alert('Thank you for your message! I will get back to you soon.');
+            try {
+                // Show professional message
+                const confirmationMessage = `Thank you for your message! I'm working on setting up direct message transfer. Meanwhile, I'll prepare an email for you to send directly.\n\nClick OK to open your email client with a pre-drafted message.`;
+                
+                if (confirm(confirmationMessage)) {
+                    // Create professional email content
+                    const emailSubject = `Portfolio Contact: ${subject}`;
+                    const emailBody = `Dear Abhishek,
+
+I hope this email finds you well. I came across your portfolio website and would like to get in touch regarding ${subject}.
+
+Contact Information:
+- Name: ${name}
+- Email: ${email}
+
+Message:
+${message}
+
+I look forward to hearing from you.
+
+Best regards,
+${name}
+${email}
+
+---
+Sent from: https://abhishek.secada.in
+Timestamp: ${new Date().toLocaleString()}`;
+
+                    // Open email client with pre-filled content
+                    const mailtoLink = `mailto:abhi133182@outlook.com?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
+                    window.location.href = mailtoLink;
+                    
+                    // Reset form after successful email preparation
+                    form.reset();
+                    alert('Email client opened! Please review and send the message. Thank you for contacting me.');
+                }
+            } catch (error) {
+                console.error('Error preparing email:', error);
+                alert('Sorry, there was an issue preparing your email. Please contact me directly at abhi133182@outlook.com');
+            } finally {
+                // Reset button state
+                submitButton.innerHTML = originalText;
+                submitButton.disabled = false;
+            }
         }
         
         // Intersection Observer for animations
@@ -2226,6 +3022,7 @@
         window.addEventListener('scroll', function() {
             const scrollButton = document.getElementById('scroll-to-top');
             const callButton = document.getElementById('call-button');
+            const liveCostButton = document.getElementById('live-cost-button');
             
             if (scrollButton) {
                 if (window.pageYOffset > 300) {
@@ -2247,12 +3044,189 @@
                 }
             }
             
+            if (liveCostButton) {
+                if (window.pageYOffset > 300) {
+                    liveCostButton.classList.remove('opacity-0', 'invisible');
+                    liveCostButton.classList.add('opacity-100', 'visible');
+                } else {
+                    liveCostButton.classList.add('opacity-0', 'invisible');
+                    liveCostButton.classList.remove('opacity-100', 'visible');
+                }
+            }
+            
             // Update scroll progress
             updateScrollProgress();
         });
 
+        // Handle responsive positioning for zoom levels
+        function updateButtonPositions() {
+            const liveCostButton = document.getElementById('live-cost-button');
+            const callButton = document.getElementById('call-button');
+            
+            if (window.innerWidth < 640) { // Mobile
+                if (liveCostButton) {
+                    liveCostButton.classList.remove('right-24');
+                    liveCostButton.classList.add('right-20');
+                }
+                if (callButton) {
+                    callButton.classList.remove('left-8');
+                    callButton.classList.add('left-4');
+                }
+            } else { // Desktop
+                if (liveCostButton) {
+                    liveCostButton.classList.remove('right-20');
+                    liveCostButton.classList.add('right-24');
+                }
+                if (callButton) {
+                    callButton.classList.remove('left-4');
+                    callButton.classList.add('left-8');
+                }
+            }
+        }
+
+        // Update positions on resize and zoom
+        window.addEventListener('resize', updateButtonPositions);
+        window.addEventListener('load', updateButtonPositions);
+        
+        // Enhanced zoom detection
+        let currentZoom = window.devicePixelRatio || 1;
+        let resizeTimeout;
+        
+        function handleZoomChange() {
+            const newZoom = window.devicePixelRatio || 1;
+            if (Math.abs(newZoom - currentZoom) > 0.1) {
+                currentZoom = newZoom;
+                updateButtonPositions();
+            }
+        }
+        
+        // Debounced resize handler for better performance
+        function debouncedResize() {
+            clearTimeout(resizeTimeout);
+            resizeTimeout = setTimeout(() => {
+                updateButtonPositions();
+            }, 100);
+        }
+        
+        // Listen for zoom changes
+        window.addEventListener('resize', debouncedResize);
+        window.addEventListener('orientationchange', debouncedResize);
+        
+        // Check for zoom changes periodically
+        setInterval(handleZoomChange, 500);
+
+        // Sanitize HTML content
+        function sanitizeHTML(str) {
+            const div = document.createElement('div');
+            div.textContent = str;
+            return div.innerHTML;
+        }
+
+        // Safe innerHTML update
+        function safeInnerHTML(element, content) {
+            if (element && content) {
+                element.innerHTML = sanitizeHTML(content);
+            }
+        }
+
+        // Initialize event listeners for security (simplified for performance)
+        function initializeEventListeners() {
+            // Use event delegation for better performance
+            document.addEventListener('click', function(e) {
+                const target = e.target;
+                
+                // Navigation buttons
+                if (target.hasAttribute('data-section')) {
+                    e.preventDefault();
+                    const sectionId = target.getAttribute('data-section');
+                    if (sectionId) {
+                        scrollToSection(sectionId);
+                        if (target.classList.contains('mobile-nav-item')) {
+                            toggleMobileMenu();
+                        }
+                    }
+                }
+                
+                // Modal buttons
+                if (target.hasAttribute('data-modal')) {
+                    e.preventDefault();
+                    const modalId = target.getAttribute('data-modal');
+                    if (modalId) {
+                        openModal(modalId);
+                    }
+                }
+                
+                // Close modal buttons
+                if (target.hasAttribute('data-action') && target.getAttribute('data-action') === 'close-modal') {
+                    e.preventDefault();
+                    const modalId = target.getAttribute('data-modal-id');
+                    if (modalId) {
+                        closeModal(modalId);
+                    }
+                }
+                
+                // Phone number reveal
+                if (target.hasAttribute('data-phone')) {
+                    e.preventDefault();
+                    revealPhoneNumber(target);
+                }
+            });
+            
+            // Specific button listeners
+            const liveCostButton = document.getElementById('live-cost-button');
+            if (liveCostButton) {
+                liveCostButton.addEventListener('click', openCostModal);
+            }
+            
+            const scrollToTopButton = document.getElementById('scroll-to-top');
+            if (scrollToTopButton) {
+                scrollToTopButton.addEventListener('click', scrollToTop);
+            }
+        }
+
+        // Enhanced scroll spy for smooth navigation
+        function initScrollSpy() {
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('.nav-link, .mobile-nav-item');
+            
+            function updateActiveSection() {
+                const scrollPosition = window.scrollY + 100; // Offset for better detection
+                
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.offsetHeight;
+                    const sectionId = section.getAttribute('id');
+                    
+                    if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                        // Remove active class from all links
+                        navLinks.forEach(link => link.classList.remove('active'));
+                        
+                        // Add active class to current section's link
+                        const activeLink = document.querySelector(`[data-section="${sectionId}"]`);
+                        if (activeLink) {
+                            activeLink.classList.add('active');
+                        }
+                    }
+                });
+            }
+            
+            // Throttled scroll event for better performance
+            let ticking = false;
+            function requestTick() {
+                if (!ticking) {
+                    requestAnimationFrame(updateActiveSection);
+                    ticking = true;
+                }
+            }
+            
+            window.addEventListener('scroll', requestTick);
+            updateActiveSection(); // Initial call
+        }
+
         // Initialize everything when DOM is loaded
         document.addEventListener('DOMContentLoaded', function() {
+            // Initialize event listeners for security
+            initializeEventListeners();
             // Ensure profile image is visible
             const profileImg = document.querySelector('.profile-image-container img');
             if (profileImg) {
@@ -2289,6 +3263,8 @@
                     initBlogPreviews();
                     initScrollSpy();
                     initProjectFilters();
+                    initializeBillingUpdates();
+                    updateButtonPositions(); // Initial button positioning
                 });
             } else {
                 setTimeout(() => {
@@ -2297,6 +3273,8 @@
                     initBlogPreviews();
                     initScrollSpy();
                     initProjectFilters();
+                    initializeBillingUpdates();
+                    updateButtonPositions(); // Initial button positioning
                 }, 100);
             }
             
@@ -2444,6 +3422,126 @@
             });
 
             applyFilter('all');
+        }
+
+        // AWS Billing Functions
+        async function fetchAWSBilling() {
+            try {
+                // For demo purposes, we'll use mock data since we can't make direct AWS API calls from browser
+                // In production, you'd need a backend API endpoint that uses AWS SDK
+                
+                // Calculate realistic website-specific costs
+                const today = new Date();
+                const deploymentDate = new Date('2025-08-01'); // Website deployed in August 2025
+                const daysSinceDeployment = Math.ceil((today - deploymentDate) / (1000 * 60 * 60 * 24));
+                
+                // Website-specific daily costs (realistic for portfolio)
+                const dailyS3Cost = 0.02; // S3 storage for portfolio files
+                const dailyCloudFrontCost = 0.15; // CloudFront data transfer
+                const dailyLambdaCost = 0.01; // Lambda function for billing API
+                const dailyCloudflareCost = 0.00; // Cloudflare Free plan
+                const dailyTotal = dailyS3Cost + dailyCloudFrontCost + dailyLambdaCost + dailyCloudflareCost;
+                
+                // Calculate costs based on actual deployment date
+                const currentMonthCost = dailyTotal * Math.min(daysSinceDeployment, today.getDate());
+                const previousMonthCost = 0; // Website didn't exist last month
+                
+                const mockBillingData = {
+                    daily: {
+                        total: dailyTotal,
+                        s3: dailyS3Cost,
+                        cloudfront: dailyCloudFrontCost,
+                        lambda: dailyLambdaCost,
+                        cloudflare: dailyCloudflareCost
+                    },
+                    monthly: {
+                        current: currentMonthCost,
+                        previous: previousMonthCost
+                    },
+                    lastUpdated: new Date().toLocaleString()
+                };
+
+                // Update UI with billing data
+                updateBillingUI(mockBillingData);
+                
+                // Store last update time
+                localStorage.setItem('awsBillingLastUpdate', new Date().toISOString());
+                
+            } catch (error) {
+                console.error('Error fetching AWS billing:', error);
+                updateBillingUI({
+                    daily: { total: 0, s3: 0, cloudfront: 0, lambda: 0, cloudflare: 0 },
+                    monthly: { current: 0, previous: 0 },
+                    lastUpdated: 'Error loading data'
+                });
+            }
+        }
+
+        function updateBillingUI(data) {
+            // Update preview elements
+            document.getElementById('preview-daily-cost').textContent = `$${data.daily.total.toFixed(2)}`;
+            document.getElementById('preview-s3-cost').textContent = `$${data.daily.s3.toFixed(2)}`;
+            document.getElementById('preview-cloudfront-cost').textContent = `$${data.daily.cloudfront.toFixed(2)}`;
+            document.getElementById('preview-lambda-cost').textContent = `$${data.daily.lambda.toFixed(2)}`;
+            // Cloudflare is always free, no need to update dynamically
+
+            
+            // Update modal elements
+            document.getElementById('modal-daily-cost').textContent = `$${data.daily.total.toFixed(2)}`;
+            document.getElementById('modal-monthly-cost').textContent = `$${data.monthly.current.toFixed(2)}`;
+            document.getElementById('modal-last-month-cost').textContent = `$${data.monthly.previous.toFixed(2)}`;
+            document.getElementById('modal-s3-cost').textContent = `$${data.daily.s3.toFixed(2)}`;
+            document.getElementById('modal-cloudfront-cost').textContent = `$${data.daily.cloudfront.toFixed(2)}`;
+            document.getElementById('modal-lambda-cost').textContent = `$${data.daily.lambda.toFixed(2)}`;
+            // Cloudflare is always free, no need to update dynamically
+
+            document.getElementById('modal-last-updated').textContent = data.lastUpdated;
+            
+            // Update progress bars
+            const progressPercent = Math.min((data.daily.total / 1.00) * 100, 100);
+            const modalProgressBar = document.getElementById('modal-cost-progress');
+            if (modalProgressBar) {
+                modalProgressBar.style.width = `${progressPercent}%`;
+            }
+            
+            // Stop loading animation
+            const syncIcons = document.querySelectorAll('.fa-sync-alt');
+            syncIcons.forEach(icon => {
+                icon.classList.remove('animate-spin');
+            });
+        }
+
+        function initializeBillingUpdates() {
+            // Check if we need to update (every 24 hours)
+            const lastUpdate = localStorage.getItem('awsBillingLastUpdate');
+            const now = new Date();
+            const shouldUpdate = !lastUpdate || 
+                (now - new Date(lastUpdate)) > (24 * 60 * 60 * 1000); // 24 hours
+
+            if (shouldUpdate) {
+                fetchAWSBilling();
+            } else {
+                // Load cached data
+                const cachedData = localStorage.getItem('awsBillingData');
+                if (cachedData) {
+                    updateBillingUI(JSON.parse(cachedData));
+                }
+            }
+
+            // Set up periodic updates (every 24 hours)
+            setInterval(fetchAWSBilling, 24 * 60 * 60 * 1000);
+        }
+
+        // Cost Modal Functions
+        function openCostModal() {
+            const modal = document.getElementById('modal-live-cost');
+            if (!modal) return;
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            document.addEventListener('keydown', escHandler);
+            
+            // Refresh cost data when modal opens
+            fetchAWSBilling();
         }
 
         // Modals
